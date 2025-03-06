@@ -38,7 +38,7 @@
   ![Arch Linux](https://img.shields.io/badge/Arch%20Linux-%23374592.svg?style=for-the-badge&logo=arch-linux&logoColor=white)
   ![MySQL](https://img.shields.io/badge/MySQL-%2300A1E4.svg?style=for-the-badge&logo=mysql&logoColor=white)
   ![BurpSuite](https://img.shields.io/badge/Burp%20Suite-%23F4B400.svg?style=for-the-badge&logo=burp-suite&logoColor=whit)
-  ![Tor](https://img.shields.io/badge/Tor-7D4698?style=for-the-badge&logo=Tor-Browser&logoColor=white
+  ![Tor](https://img.shields.io/badge/Tor-7D4698?style=for-the-badge&logo=Tor-Browser&logoColor=white)
 
 ### <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/CP_PS.gif?raw=true" width = 50px>  </picture> Competitive Programming & Problem Solving
  
