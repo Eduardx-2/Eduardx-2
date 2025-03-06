@@ -1,0 +1,135 @@
+body {
+    background-color: #000;
+    color: #0f0;
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header {
+    text-align: center;
+    padding: 15px;
+    font-size: 24px;
+    background: #111;
+    border-bottom: 3px solid #0f0;
+    text-transform: uppercase;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin-top: 90px;
+    padding: 20px;
+}
+.blog-content {
+    border: 2px solid #0f0;
+    padding: 25px;
+    background: #111;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #0f0;
+}
+h1 {
+    color: #0ff;
+    text-align: center;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 8px;
+    border: 2px solid rgb(3, 94, 155);
+    box-shadow: 0 0 10px #0f0;
+}
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+a {
+    color: #f00;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.code-box {
+    background: #222;
+    padding: 15px;
+    border-left: 5px solid rgb(194, 3, 3);
+    font-family: monospace;
+    color: #0f0;
+    overflow-x: auto;
+    margin: 15px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #0f0;
+}
+.code-hack {
+    background: #0d0d0d; /* Fondo negro puro */
+    color: #00ff00; /* Verde neón estilo terminal */
+    padding: 15px;
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    font-family: "Fira Code", monospace;
+    font-size: 14px;
+    overflow-x: auto;
+    box-shadow: 0 0 10px #741fca;
+}
+
+.code-hack code {
+    color: #00ff00; /* Mantiene el texto en verde */
+}
+@media screen and (max-width: 768px) {
+     
+    .container {
+        width: 95%;
+        margin-top: 100px;
+        padding: 10px;
+    }
+    .blog-content {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 18px;
+    }
+    p {
+        font-size: 14px;
+        word-wrap: break-word;
+    }
+    .code-box, .code-hack {
+        .code-box, .code-hack {
+        background: #0d0d0d; 
+        color: #00ff00;
+        padding: 15px;
+        border: 2px solid #00ff00;
+        border-left: 5px solid rgb(194, 3, 3);
+        border-radius: 8px;
+        font-family: "Fira Code", monospace;
+        font-size: 14px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        text-align: left;
+        line-height: 1.5;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+}

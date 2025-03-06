@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <title>Explotando GhostCMS</title>
+    <link rel="stylesheet" href="css/stying.css">
+</head>
+<body>
+    <header>
+        <h1>GhostCMS Attack</h1>
+    </header>
+    <div class="container">
+        <div class="blog-content">
+            <h1>Explotando Arbitrary File Read</h1>
+            <p><strong>Fecha:</strong> 3/03/2025</p>
+            <p>Comienzo con un pequeño fuzzing utilizando wffuz para identificar rutas accesibles. 
+               Entre los resultados destaca una en particular: /.git/</p>
+               <img src="ghost/devs.png">
+            <p>Voy a traer el directorio .git a mí maquina atacante usando wget.</p>
+            <div class="code-box">
+                <code>
+                    wget -r http://domain/.git
+                </code>
+            </div>
+            <p>Muy bien, aplicó un git diff para comparar el contenido actual con los commits del proyecto. 
+                Después de un tiempo encontre un usuario "adminX", está tomando tiempo por lo cuál usare git-dumper.
+                Dentro de la carpeta que genero git-dumper se encuentra un archivo de configuración con extensión .ghost,
+            dentro del archivo se encuentran las rutas de archivos de configuración.</p>
+            <div class="code-box">
+                <code>
+                    /var/lib/ghost/config.production.json
+                </code>
+            </div>
+            <p>git-dumper me creo una carpeta dev, donde se encuentra el codigó del proyecto.</p>
+            <img src="ghost/codes.png">
+
+            <p>Y si.... También vi lo que estan viendo, un archivo de autenticación .js, filtrando un poco sobre el contenido usando las palabras claves "db,user,password"
+                Bingooo: 
+            it('complete setup', async function () {
+                const email = '********';
+                const password = '********';
+                credenciales de inicio, posiblemente del panel de ghostcms.
+            </p>
+            <p>Bueno, como se esperaba, tengo acceso al panel de administrador tengo mi sospechas de que el panel es vulnerable a sqli, 
+                probare más adelante, por el momento me encontre un token "661253480a2b51000176c33c:56f8b1dd7123ce287c6bfeb91647f2b84c16a1d5e5751a725c8a04960d89408e"</p>
+                <div class="code-box">
+                    <code>
+                        wappalyzer me indica que la versión de GhostCms -> 5.58.
+                    </code>
+                </div>
+            <p>Anteriormente leyendo el codigo, se hacen llamadas __dirname, así que los tiros van por ahí,
+                investigando sobre la versión, encuentro que es vulnerable al ataque Arbitrary File Read, ¿De que trata?
+            </p>
+            <div class="code-box">
+                <code>
+                    Se puede llegar a leer archivos arbitrarios del servidor, explotando una falla al cargar un archivo .zip el cuál contenga
+                    un symblink o enlace simbolico de tipo malicioso y así poder obtener acceso a los archivos del sistema.                
+                </code>
+            </div>
+            <p>Antes de explotar la vulnerabilidad testeando un poco, realizo una petición:/</p>
+            <div class="code-box">
+                <code>
+                    curl -i -s -d username="*****" -d password="******" -H "Origin: http://hostl" -H "Accept-Version: v3.0" http://hostl/ghost/api/v3/admin/session               
+                </code>
+            </div>
+            <p>Esto devuelve "created2" como respuesta. En las cabezeras genera un set-cookie que expira, 
+                lo cuál me hace creer que puede tener un buen impacto en proximos solicitudes. Para entender un poco mejor la vulnerabilidad, me dirijo en el panel de administrador de Ghostcms > profile, el usuario puede cambiar su foto de perfil
+                la cuál al cargar una imagen y subirla apunta a la siguente direción: POST /ghost/api/admin/images/upload</p>
+            <img src="ghost/burp.png">
+            <p>Opté por intentar cargar una webshell, pero claramente no me dejo, aún así cambiando extensión y probando más movidas.
+                Así que pasemos a lo importante, explotar la vulnerabilidad.
+                Investigando un poco, encontre un <a href="https://github.com/0xDTC/Ghost-5.58-Arbitrary-File-Read-CVE-2023-40028.git" target="_blank">exploit<a href="https://github.com/0xDTC/Ghost-5.58-Arbitrary-File-Read-CVE-2023-40028.git" target="_blank"></a> cuál automatiza la explotación.
+            </p>
+            <img src="ghost/exploit.png">
+            <p>El exploit está desarrollado en Bash y funciona como un script de automatización de explotación. Su ejecución es sencilla, requiriendo solo tres parámetros: usuario, contraseña y la URL del servicio Ghost (página objetivo).</p>
+            <p>Veamos más a fondo el exploit para entender mejor la vulnerabilidad.</p>
+
+            <pre class="code-hack"><code class="language-bash">function generate_exploit()</code></pre> 
+
+            <p>La función por su mismo nombre indica que crea un exploit, contiene tres variables.</p>
+
+            <pre class="code-hack"><code class="language-bash">local IMAGE_NAME=$(tr -dc A-Za-z0-9 &lt; /dev/urandom | head -c 13; echo)
+local TEMP_PATH=$(mktemp -d)
+local PAYLOAD_PATH="$TEMP_PATH/exploit"
+ln -s "$FILE_TO_READ" "$PAYLOAD_PATH/content/images/2024/$IMAGE_NAME.png"</code></pre>
+            <p>Los nombres de las variables nos indica que está realizando, peeeero, en la cuarta linea podemos ver que se está realizando la llamada con un enlace simbolico a la imagen que se crea.</p>
+            <pre class="code-hack"><code class="language-bash">function create_cookie()</code></pre> 
+            <p>Anteriormente realizando peticiones, dije que la cookie contenia su tiempo de expiración, pues bueno, está cookie es la que nos 
+                ayuda a poder subir el archivo, la ruta /db, cargandolo como un archivo .zip, el cuál contiene un symblink malicioso, que se encarga de llamar al archivo que especifiquemos como carga maliciosa.
+            </p>
+            <pre class="code-hack"><code class="language-bash">
+read -p "Enter the file path to read (or type 'exit' to quit): " FILE_PATH
+curl -s -b "$COOKIE" "$GHOST_URL/content/images/2024/$IMAGE_NAME.png"
+            </code></pre> 
+            <p>
+                Al ejecutar el exploit, nos indica que ingresemos un path, si indicó /etc/passwd podre ver el contenido del archivo,
+                gracias a que curl envia una solictud a la ruta content/images/2024/, está ruta es donde se guardan, las imagenes subidas por el usuario.
+            </p>
+            <img src="ghost/vExp.png">
+            <p>Y yaa...
+                Nada complicado explotar un Arbitrary File Read, basicamente es igual a explotar un ImageMagick, la unica diferencia aquí que jugamos con archivo .zip.
+            </p>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+            <a class="back-link" href="../index.html">⬅ Volver al Blog</a>
+        </div>
+    </div>
+</body>
+</html>

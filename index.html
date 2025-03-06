@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Hacking</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            background: #111;
+            border-bottom: 2px solid #0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .header-img {
+            width: 80px;
+            height: 75px;
+            border-radius: 50%;
+            border: 2px solid rgb(99, 6, 76);
+            position: absolute;
+            right: 20px;
+        }
+        .blink {
+            animation: blink 1s infinite;
+            color: rgb(243, 13, 247);
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .blog-post {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #0f0;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #111;
+        }
+        .blog-text {
+            flex: 1;
+        }
+        .blog-img {
+            width: 150px;
+            height: auto;
+            border: 1px solid rgb(157, 157, 201);
+            margin-left: 15px;
+        }
+        h2 {
+            color: #0ff;
+        }
+        a {
+            color: #f00;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Notes By Eduard<span class="blink">x</span></h1>
+        <img src="img/foroLog.jpg" class="header-img">
+    </header>
+
+    <div class="container">
+        <div class="blog-post">
+            <div class="blog-text">
+                <h2>Explotando GhostCms</h2>
+                <p>Explotando una vulnerabilidad de lectura arbitraria de archivos a través del panel de GhostCMS, comprendí su funcionamiento y cómo abusar de la ruta .git/ para acceder a información sensible.</p>
+                <a href="blogs/ghostExplain.html">Leer más</a>
+            </div>
+            <img src="img/ghost.jpg" class="blog-img" >
+        </div>
+        <div class="blog-post">
+            <div class="blog-text">
+                <h2>Cookie Stealer & Bank</h2>
+                <p>Desarrollando malware para extraer cookies y contraseñas de computadoras objetivo, utilizando PowerShell y Python como herramientas principales. La infección se lleva a cabo mediante archivos PDF maliciosos, aprovechando la confianza de los usuarios en este tipo de documentos.</p>
+                <a href="blogs/cookieStealer.html">Leer más</a>
+            </div>
+            <img src="img/mr-robot.jpg"  class="blog-img">
+        </div>
+    </div>
+
+</body>
+</html>
+
