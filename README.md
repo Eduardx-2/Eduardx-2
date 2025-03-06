@@ -1,15 +1,17 @@
 <h1 align="center"><b>Hi , I'm Eduardx</b><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"></h1>
 
-## <picture><img src = "https://github.com/0xAbdulKhalid/0xAbdulKhalid/raw/main/assets/mdImages/about_me.gif" width = 50px></picture> **About me**
+## <picture><img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/about_me.gif?raw=true" width = 50px></picture> About me
 
 <picture> <img align="right" src="https://github.com/0xAbdulKhalid/0xAbdulKhalid/raw/main/assets/mdImages/Right_Side.gif" width = 250px></picture>
 
 <br>
 
+- Hi, I'm Eduardx, a computing graduate and a passionate tech enthusiast. I specialize in areas I love, including data analysis, neural network development, pentesting, and software development. I have experience in a bit of everything, but I excel in Python, Java, and Rust. Additionally, I am a backend developer.
+
 - 🔥 Passionate about software development
 - 🛡️ Passionate about hacking & pentesting
 - 🎯 My favorite hobby is playing CTFs or testing system vulnerabilities
-
+- Personal Website [link](https://eduardx-2.github.io/Eduardx-2/)
 <br>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"><br><br>
@@ -18,21 +20,31 @@
 
 <p align="center">
 
-- **Languages**:
+- ## <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Programming_Languages.gif?raw=true" width = 50px>  </picture>Languages
   
     ![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
     ![Rust](https://img.shields.io/badge/Rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)
     ![Python](https://img.shields.io/badge/Python%20-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white)
 
-- **Softwares and Tools**:
+ - ## <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/IDEs.gif?raw=true" width = 50px>  </picture> Softwares and Tools
 
     ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
     ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
     ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
     ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
-- **Extras**
+- ### <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/OS.gif?raw=true" width = 50px>  </picture> Extras
 
   ![Arch Linux](https://img.shields.io/badge/Arch%20Linux-%23374592.svg?style=for-the-badge&logo=arch-linux&logoColor=white)
   ![MySQL](https://img.shields.io/badge/MySQL-%2300A1E4.svg?style=for-the-badge&logo=mysql&logoColor=white)
   ![BurpSuite](https://img.shields.io/badge/Burp%20Suite-%23F4B400.svg?style=for-the-badge&logo=burp-suite&logoColor=whit)
+
+### <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/CP_PS.gif?raw=true" width = 50px>  </picture> Competitive Programming & Problem Solving
+ 
+<p align="center">
+  &emsp;
+    <a href="#"><img alt = "Huckerrank" src="https://img.shields.io/badge/hackerrank-%232EC866.svg?style=plastic&logo=hackerrank&logoColor=white" /></a>
+  &emsp;
+    <a href="#"><img alt = "CodeChef" src="https://img.shields.io/badge/codechef-%235B4638.svg?style=plastic&logo=codechef&logoColor=white" /></a>
+
+</p>
