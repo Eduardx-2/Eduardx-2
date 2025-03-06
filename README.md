@@ -35,3 +35,4 @@
 
   ![Arch Linux](https://img.shields.io/badge/Arch%20Linux-%23374592.svg?style=for-the-badge&logo=arch-linux&logoColor=white)
   ![MySQL](https://img.shields.io/badge/MySQL-%2300A1E4.svg?style=for-the-badge&logo=mysql&logoColor=white)
+  ![BurpSuite](https://img.shields.io/badge/Burp%20Suite-%23F4B400.svg?style=for-the-badge&logo=burp-suite&logoColor=whit)
