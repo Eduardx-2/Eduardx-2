@@ -6,7 +6,7 @@
 
 <br>
 
-- Hi, I'm Eduardx, a computing graduate and a passionate tech enthusiast. I specialize in areas I love, including data analysis, neural network development, pentesting, and software development. I have experience in a bit of everything, but I excel in Python, Java, and Rust. Additionally, I am a backend developer.
+- Hi, I'm Eduardx, a computing graduate and a passionate tech enthusiast. I specialize in areas I love, including data analysis, neural network development, pentesting, and software development. I have experience in a bit of everything, but I excel in Python, Java, JavaScript and Rust. Additionally, I am a backend developer.
 
 - 🔥 Passionate about software development
 - 🛡️ Passionate about hacking & pentesting
