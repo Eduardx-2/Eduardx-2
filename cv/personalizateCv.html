@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cv Portfolio</title>
+    <style>
+        body {
+    background-color: #0a0a0a;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin-top: 50px;
+    padding: 20px;
+    background: linear-gradient(135deg, #111, #222);
+    border-radius: 10px;
+    box-shadow: 0 0 15px #0ff;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+}
+
+.profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.description {
+    flex: 1;
+}
+
+h1, h2 {
+    color: #0ff;
+}
+
+.sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.section {
+    padding: 15px;
+    background: #222;
+    border-left: 4px solid #70027e;
+    border-radius: 8px;
+}
+
+.skills span, .tech-stack span, .hard-skills span {
+    display: inline-block;
+    background: #0ff;
+    color: #1e1f1e;
+    padding: 5px 10px;
+    margin: 7px;
+    border-radius: 5px;
+}
+
+.contact {
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px;
+    background: #111;
+    border-top: 2px solid #70027e;
+}
+
+a {
+    color: #f00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .sections {
+        grid-template-columns: 1fr;
+    }
+    .profile {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .profile img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="mov.png" alt="Foto de perfil">
+            <div class="description" >
+                <h1>Eduardo Martinez</h1>
+                <p>Soy un joven desarrollador graduado en diplomado en computación con 4 años de experiencia en informática, con conocimientos en Python, Java, Rust, JavaScript y MySQL, con un enfoque en pentesting empresarial, desarrollo de software y la creación de soluciones backend seguras y eficientes. Mi principal pasión es el desarrollo y la ciberseguridad, también tengo conocimientos básicos en hacking de redes WiFi, lo que complementa mi interés por resolver problemas técnicos complejos. Mi objetivo es encontrar un entorno donde pueda seguir creciendo profesionalmente y contribuir a mi entorno de trabajo y empresarial.</p>
+            </div>
+        </div>
+        
+        <div class="sections">
+            <div class="section skills">
+                <h2>Skills</h2>
+                <span>Python</span>
+                <span>JavaScript</span>
+                <span>Java</span>
+                <span>Rust</span>
+                <span>Pentesting</span>
+                <p><strong>Ciberseguridad:</strong> Pentesting web y mobile, pruebas de penetración, análisis de vulnerabilidades.</p>
+            </div>
+            
+            <div class="section experience">
+                <h2><a href="https://github.com/Eduardx-2/" target="_blank">Work Experience<a href="https://github.com/Eduardx-2/" target="_blank"></a></h2>
+                <p><strong>Proyectos Abiertos</strong> - Desarrollo de herramientas personales y colaborativas en foros de hacking, enfocadas en mejorar y automatizar técnicas de pentesting.</p>
+                <p><strong>Desarrollo de software</strong> - Desarrollo de diferentes software en areas de: Big Data, IA y Ciberseguridad.</p>
+            </div>
+            
+            <div class="section tech-stack">
+                <h2>Tech Stack</h2>
+                <span>OpenCV</span>
+                <span>Spring Boot</span>
+                <span>MySQL</span>
+                <span>Sap y Oodo(ERP)</span>
+                <span>Puppeteer</span>
+            </div>
+            
+            <div class="section hard-skills">
+                <h2>Hard Skills</h2>
+                <span>Automatización</span>
+                <span>OSINT</span>
+                <span>Pentesting Web</span>
+                <span>Programación</span>
+                <span>Análisis de Datos</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="contact">
+        <p>📧 eduardoooxnix@proton.me | 🌐 https://eduardx-2.github.io/Eduardx-2/ | 📞 <a href="https://t.me/@Eduardx_montana" target="_blank">Telegram<a href="https://t.me/@Eduardx_montana" target="_blank"></a></p>
+    </div>
+</body>
+</html>
