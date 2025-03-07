@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog de Hacking</title>
     <style>
-        body {
+         body {
             background-color: #000;
             color: #0f0;
             font-family: monospace;
             margin: 0;
             padding: 0;
-        }
+         }
+
         header {
             text-align: center;
             padding: 20px;
@@ -22,63 +23,106 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            flex-wrap: wrap;
         }
+        
         .header-img {
             width: 80px;
             height: 75px;
             border-radius: 50%;
             border: 2px solid rgb(99, 6, 76);
-            position: absolute;
-            right: 20px;
         }
+        
+        .header-img-a {
+            position: absolute;
+            right: 22px;
+        }
+        
         .blink {
             animation: blink 1s infinite;
             color: rgb(243, 13, 247);
         }
+        
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
+        
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
             padding: 20px;
         }
+        
         .blog-post {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
             border: 1px solid #0f0;
             padding: 15px;
             margin-bottom: 20px;
             background: #111;
         }
+        
         .blog-text {
             flex: 1;
+            text-align: center;
         }
+        
         .blog-img {
-            width: 150px;
+            width: 100%;
+            max-width: 150px;
             height: auto;
             border: 1px solid rgb(157, 157, 201);
-            margin-left: 15px;
+            margin-top: 15px;
         }
+        
         h2 {
             color: #0ff;
         }
+        
         a {
             color: #f00;
             text-decoration: none;
         }
+        
         a:hover {
             text-decoration: underline;
         }
+        
+        /* Media Queries para responsividad */
+        @media (min-width: 600px) {
+            .blog-post {
+                flex-direction: row;
+                align-items: center;
+            }
+        
+            .blog-text {
+                text-align: left;
+            }
+        
+            .blog-img {
+                margin-left: 15px;
+                margin-top: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-img-a {
+                position: static;
+                margin-top: 10px;
+            }
+        }
+
     </style>
 </head>
 <body>
     
     <header>
-        <h1>Notes By Eduard<span class="blink">x</span></h1>
-        <img src="img/foroLog.jpg" class="header-img">
+       <h1>Notes By Eduard<span class="blink"><a href="cv/personalizateCv.html" target="_blank">x<a href="cv/personalizateCv.html" target="_blank"></a></span></h1>
+       <a href="cv/personalizateCv.html" class="header-img-a"> <img src="img/foroLog.jpg" class="header-img"></a>
     </header>
 
     <div class="container">
