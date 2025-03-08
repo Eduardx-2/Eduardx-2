@@ -6,7 +6,7 @@
 
 <br>
 
-- Hi, I'm Eduardx, a computing graduate and a passionate tech enthusiast. I specialize in areas I love, including data analysis, neural network development, pentesting, and software development. I have experience in a bit of everything, but I excel in Python, Java, JavaScript and Rust. Additionally, I am a backend developer.
+- I am a young developer with a diploma in computing and four years of experience in IT, with knowledge of Python, Java, Rust, JavaScript, and MySQL, focusing on enterprise pentesting, software development, and creating secure and efficient backend solutions. My main passion is development and cybersecurity. I also have basic knowledge of WiFi network hacking, which complements my interest in solving complex technical problems. My goal is to find an environment where I can continue growing professionally and contribute to my workplace and the business environment.
 
 - 🔥 Passionate about software development
 - 🛡️ Passionate about hacking & pentesting
@@ -33,6 +33,7 @@
     ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
     ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
     ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+    ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
 
 - ### <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/OS.gif?raw=true" width = 50px>  </picture> Extras
 
