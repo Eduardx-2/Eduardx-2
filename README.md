@@ -6,7 +6,7 @@
 
 <br>
 
-- I am a young developer with a diploma in computing and four years of experience in IT, with knowledge of Python, Java, Rust, JavaScript, and MySQL, focusing on enterprise pentesting, software development, and creating secure and efficient backend solutions. My main passion is development and cybersecurity. I also have basic knowledge of WiFi network hacking, which complements my interest in solving complex technical problems. My goal is to find an environment where I can continue growing professionally and contribute to my workplace and the business environment.
+- I am a young developer with a diploma in computing and four years of experience in IT, with knowledge of Python, Java, Rust, JavaScript, and MySQL, focusing on enterprise       pentesting, software development, and creating secure and efficient backend solutions. My main passion is development and cybersecurity. I also have basic knowledge of WiFi network hacking, which complements my interest in solving complex technical problems. My goal is to find an environment where I can continue growing professionally and contribute to my workplace and the business environment.
 
 - 🔥 Passionate about software development
 - 🛡️ Passionate about hacking & pentesting
