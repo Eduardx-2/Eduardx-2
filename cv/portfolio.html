@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleContact.css">
+    <link rel="stylesheet" href="css/styleBody.css">
+
+    <title>EduardxCv</title>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".section");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="mov.png" alt="Foto de perfil">
+            <div class="description">
+                <h1>Eduardo Martinez</h1>
+                <p>Soy un joven desarrollador graduado en diplomado en computación con 4 años de experiencia en informática, con conocimientos en Python, Java, Rust, JavaScript y MySQL, con un enfoque en pentesting empresarial, desarrollo de software y la creación de soluciones backend seguras y eficientes. Mi principal pasión es el desarrollo y la ciberseguridad, también tengo conocimientos básicos en hacking de redes WiFi, lo que complementa mi interés por resolver problemas técnicos complejos. Mi objetivo es encontrar un entorno donde pueda seguir creciendo profesionalmente y contribuir a mi entorno de trabajo y empresarial.</p>
+            </div>
+        </div>
+        
+        <div class="sections">
+            <div class="section skills">
+                <h2>Skills & Languages</h2>
+                <div class="skill-grid">
+                    <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"> Python</div>
+                    <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"> JavaScript</div>
+                    <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/61/Rust_Programming_Language_Logo_Gear_only.svg" alt="Rust"> Rust</div>
+                    <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">Java</div>
+                    <div class="skill-item"><img src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg"> MySQL</div>
+                    <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Icons8_flat_linux.svg"> Linux</div>
+                    <div class="skill-item"><img src="https://www.svgrepo.com/show/454430/burpsuite-security-software.svg"> Burp Suite</div>
+                    <div class="skill-item"><img src="icons8-router.gif"> Redes</div>
+                </div>
+            </div>
+            
+            <div class="section experience">
+                <h2><a href="https://github.com/Eduardx-2/" target="_blank" style="text-decoration: none;">Work Experience</a></h2>
+                <p><strong>Proyectos Abiertos</strong> - Desarrollo de herramientas personales y colaborativas en foros de hacking, enfocadas en mejorar y automatizar técnicas de pentesting.</p>
+                <p><strong>Desarrollo de software</strong> - Desarrollo de diferentes software en areas de: Big Data, IA y Ciberseguridad.</p>
+            </div>
+            
+            <div class="section tech-stack">
+                <h2>Tech Stack</h2>
+                <div class="tech-grid">
+                    <div class="tech-item"><i class="fas fa-server"></i>Spring Boot</div>
+                    <div class="tech-item"><i class="fas fa-server"></i><a href="https://github.com/Eduardx-2/" target="_blank" style="color: #ff0077; text-decoration: none;">Github</a></div>
+                    <div class="tech-item"><i class="fas fa-server"></i> Sap y Odoo(ERP)</div>
+                    <div class="tech-item"><i class="fas fa-robot"></i>OpenCV</div>
+                    <div class="tech-item"><i class="fas fa-server"></i>Puppeteer & Selenium</div>
+                </div>
+            </div>
+            
+            <div class="section hard-skills">
+                <h2>Hard Skills</h2>
+                <span>Automatización</span>
+                <span>OSINT</span>
+                <span>Pentesting</span>
+                <span>POO</span>
+                <span>Desarrollo de Malware</span>
+                <span>Análisis de Datos</span>
+                <span>Backend</span>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="contact">
+        <div class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+            <p class="contact-text">eduardoooxnix@proton.me</p>
+        </div>
+        <div class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+            <a href="https://eduardx-2.github.io/Eduardx-2/" class="contact-text" target="_blank">Mi Web</a>
+        </div>
+        <div class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+            <a href="https://t.me/@Eduardx_montana" class="contact-text" target="_blank">Telegram</a>
+        </div>
+    </div>
+</body>
+</html>
