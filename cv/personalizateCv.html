@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduardxCv</title>
+
+<style>
+/* =========================
+   VARIABLES
+========================= */
+:root {
+    --bg-main: #05070a;
+    --bg-glass: rgba(255,255,255,0.06);
+    --border-glass: rgba(255,255,255,0.08);
+
+    --text-main: #e6e6e6;
+    --text-soft: #b3b3b3;
+
+    --accent: #00f7ff;
+    --accent-2: #ff0077;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #0c0f14, var(--bg-main));
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* =========================
+   CANVAS BACKGROUND
+========================= */
+#bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 20px 40px;
+}
+
+/* =========================
+   PROFILE
+========================= */
+.profile {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+.profile img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 2px solid rgba(0,247,255,.35);
+    box-shadow:
+        0 0 30px rgba(0,247,255,.25),
+        0 0 80px rgba(255,0,119,.15);
+}
+
+.description h1 {
+    font-size: 2.3rem;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 14px;
+}
+
+.description p {
+    max-width: 780px;
+    color: var(--text-soft);
+    line-height: 1.8;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.sections {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all .9s cubic-bezier(.2,.6,.2,1);
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section h2 {
+    color: var(--accent);
+    letter-spacing: 1.6px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   SKILLS
+========================= */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+    gap: 16px;
+}
+
+.skill-item {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #dcdcdc;
+    border: 1px solid var(--border-glass);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.skill-item img {
+    width: 28px;
+}
+
+.skill-item:hover {
+    box-shadow: 0 0 25px rgba(0,247,255,.25);
+}
+
+/* =========================
+   EXPERIENCE
+========================= */
+.experience p {
+    color: var(--text-soft);
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.experience strong {
+    color: #ffffff;
+}
+
+/* =========================
+   TECH STACK (MEJORADO)
+========================= */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+    gap: 20px;
+}
+
+.tech-item {
+    position: relative;
+    padding: 18px 16px;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.09),
+        rgba(255,255,255,.02)
+    );
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-glass);
+    text-align: center;
+    color: #dcdcdc;
+    font-weight: 500;
+    overflow: hidden;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.tech-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at top left,
+        rgba(0,247,255,.35),
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity .35s ease;
+}
+
+.tech-item::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,.04);
+}
+
+.tech-item:hover {
+    transform: translateY(-6px) scale(1.03);
+    border-color: rgba(0,247,255,.45);
+    box-shadow:
+        0 10px 40px rgba(0,247,255,.18),
+        0 0 30px rgba(255,0,119,.18);
+}
+
+.tech-item:hover::before {
+    opacity: 1;
+}
+
+.tech-item a {
+    color: var(--accent-2);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.tech-item a:hover {
+    color: var(--accent);
+}
+
+
+.hard-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hard-skills span {
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(0,247,255,.12);
+    color: var(--accent);
+    font-size: .9rem;
+    letter-spacing: .5px;
+    transition: all .3s ease;
+}
+
+.hard-skills span:hover {
+    background: rgba(255,0,119,.18);
+    color: var(--accent-2);
+}
+
+
+.contact {
+    margin: 80px auto 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    border: 1px solid var(--border-glass);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.contact-item img {
+    width: 22px;
+}
+
+.contact-text {
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.contact-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(0,247,255,.3);
+}
+
+
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<div class="container">
+    <div class="profile">
+        <img src="https://www.xtrafondos.com/wallpapers/mr-robot-12097.jpg" alt="Foto de perfil">
+        <div class="description">
+            <h1>Eduardo Martinez</h1>
+            <p>Soy un joven desarrollador graduado en diplomado en computación con 4 años de experiencia en informática, con conocimientos en Python, Java, Rust, JavaScript y MySQL, con un enfoque en pentesting empresarial, desarrollo de software y la creación de soluciones backend seguras y eficientes. Mi principal pasión es el desarrollo y la ciberseguridad, también tengo conocimientos básicos en hacking de redes WiFi, lo que complementa mi interés por resolver problemas técnicos complejos. Mi objetivo es encontrar un entorno donde pueda seguir creciendo profesionalmente y contribuir a mi entorno de trabajo y empresarial.</p>
+        </div>
+    </div>
+
+    <div class="sections">
+
+        <div class="section">
+            <h2>Skills & Languages</h2>
+            <div class="skill-grid">
+                <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">Python</div>
+                <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">JavaScript</div>
+                <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/61/Rust_Programming_Language_Logo_Gear_only.svg">Rust</div>
+                <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">Java</div>
+                <div class="skill-item"><img src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg">MySQL</div>
+                <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Icons8_flat_linux.svg">Linux</div>
+                <div class="skill-item"><img src="https://www.svgrepo.com/show/454430/burpsuite-security-software.svg">Burp Suite</div>
+                <div class="skill-item"><img src="icons8-router.gif">Redes</div>
+            </div>
+        </div>
+
+        <div class="section experience">
+            <h2><a href="https://github.com/Eduardx-2/" target="_blank" style="color:inherit;text-decoration:none;">Work Experience</a></h2>
+            <p><strong>Proyectos Abiertos</strong> - Desarrollo de herramientas personales y colaborativas en foros de hacking, enfocadas en mejorar y automatizar técnicas de pentesting.</p>
+            <p><strong>Desarrollo de software</strong> - Desarrollo de diferentes software en areas de: Big Data, IA y Ciberseguridad.</p>
+        </div>
+
+        <div class="section">
+            <h2>Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">Spring Boot</div>
+                <div class="tech-item"><a href="https://github.com/Eduardx-2/" target="_blank" style="color:var(--accent);text-decoration:none;">Github</a></div>
+                <div class="tech-item">(ERP)</div>
+                <div class="tech-item">OpenCV</div>
+                <div class="tech-item">Puppeteer & Selenium</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Hard Skills</h2>
+            <div class="hard-skills">
+                <span>Automatización</span>
+                <span>OSINT</span>
+                <span>Pentesting</span>
+                <span>POO</span>
+                <span>Desarrollo de Malware</span>
+                <span>Análisis de Datos</span>
+                <span>Backend</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="contact">
+    <div class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+        <p class="contact-text">eduardoooxnix@proton.me</p>
+    </div>
+    <div class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+        <a href="https://eduardx-2.github.io/Eduardx-2/" class="contact-text" target="_blank">Mi Web</a>
+    </div>
+    <div class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+        <a href="https://t.me/@Eduardx_montana" class="contact-text" target="_blank">Telegram</a>
+    </div>
+</div>
+
+<script>
+/* ===== INTERSECTION ANIMATIONS ===== */
+const sections=document.querySelectorAll(".section");
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting)e.target.classList.add("visible");
+    });
+},{threshold:.15});
+sections.forEach(s=>observer.observe(s));
+
+/* ===== CARD TILT EFFECT ===== */
+document.querySelectorAll(".skill-item,.tech-item").forEach(card=>{
+    card.addEventListener("mousemove",e=>{
+        const r=card.getBoundingClientRect();
+        const x=e.clientX-r.left;
+        const y=e.clientY-r.top;
+        card.style.transform=`translateY(-6px) rotateX(${-(y-r.height/2)/20}deg) rotateY(${(x-r.width/2)/20}deg)`;
+    });
+    card.addEventListener("mouseleave",()=>card.style.transform="");
+});
+
+/* ===== PARTICLES (HTB STYLE) ===== */
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+let w,h;
+
+function resize(){
+    w=canvas.width=window.innerWidth;
+    h=canvas.height=window.innerHeight;
+}
+window.addEventListener("resize",resize);
+resize();
+
+const particles=[];
+const COUNT=80;
+
+for(let i=0;i<COUNT;i++){
+    particles.push({
+        x:Math.random()*w,
+        y:Math.random()*h,
+        vx:(Math.random()-.5)*.3,
+        vy:(Math.random()-.5)*.3,
+        r:Math.random()*1.5+.5
+    });
+}
+
+function draw(){
+    ctx.clearRect(0,0,w,h);
+
+    for(let i=0;i<particles.length;i++){
+        const p=particles[i];
+        p.x+=p.vx;
+        p.y+=p.vy;
+
+        if(p.x<0||p.x>w)p.vx*=-1;
+        if(p.y<0||p.y>h)p.vy*=-1;
+
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle="rgba(255,255,255,.25)";
+        ctx.fill();
+
+        for(let j=i+1;j<particles.length;j++){
+            const q=particles[j];
+            const dx=p.x-q.x;
+            const dy=p.y-q.y;
+            const d=Math.sqrt(dx*dx+dy*dy);
+            if(d<120){
+                ctx.beginPath();
+                ctx.moveTo(p.x,p.y);
+                ctx.lineTo(q.x,q.y);
+                ctx.strokeStyle="rgba(255,0,119,.05)";
+                ctx.stroke();
+            }
+        }
+    }
+    requestAnimationFrame(draw);
+}
+draw();
+</script>
+
+</body>
+</html>
+
