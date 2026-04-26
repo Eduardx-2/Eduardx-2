@@ -1,0 +1,939 @@
+[
+    {
+        "nombre": "FUEGO Club Bar",
+        "tipo": "Buenos cócteles · No se aceptan reservas · Lugar para bailar",
+        "addres": "15, Blvr. De Los Heroes, San Salvador",
+        "telefono": "6670 7673",
+        "extraInf": {
+            "estrella": "3.8(65)",
+            "hora": " 2 a.m.",
+            "local": "Club nocturno",
+            "nombre": "FUEGO Club Bar"
+        }
+    },
+    {
+        "nombre": "Fussion Club El Salvador",
+        "tipo": "Buenos cócteles · Lugar para bailar",
+        "addres": "C. El Mirador 4837, San Salvador 1101",
+        "telefono": "7676 1421",
+        "extraInf": {
+            "estrella": "4.2(118)",
+            "hora": " 2 a.m.",
+            "local": "Club nocturno",
+            "nombre": "Fussion Club El Salvador"
+        }
+    },
+    {
+        "nombre": "Streeper Club Bar",
+        "tipo": "Buenos cócteles · Lugar para bailar · Bebidas en hora feliz",
+        "addres": "PQ3H+P7W, Alameda Juan Pablo II, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "3.6(19)",
+            "hora": " Abre a las 7:30 p.m.",
+            "local": "Bar",
+            "nombre": "Streeper Club Bar"
+        }
+    },
+    {
+        "nombre": "Status club bar",
+        "tipo": "Buenos cócteles · Música en vivo · Lugar para bailar",
+        "addres": "79 Avenida Nte. local 1a, San Salvador 1101",
+        "telefono": "7690 4567",
+        "extraInf": {
+            "estrella": "4.1(21)",
+            "hora": " 2 a.m.",
+            "local": "Club nocturno",
+            "nombre": "Status club bar"
+        }
+    },
+    {
+        "nombre": "Insomnia Club Bar",
+        "tipo": "Lugar para bailar · Bebidas en hora feliz",
+        "addres": "P.º Gral. Escalón 4854, San Salvador",
+        "telefono": "2263 6450",
+        "extraInf": {
+            "estrella": "3.8(125)",
+            "hora": "\"Paguen conforme vallan consumiendo.\"",
+            "local": "Club nocturno",
+            "nombre": "Insomnia Club Bar"
+        }
+    },
+    {
+        "nombre": "Divinos Club Bar",
+        "tipo": "Buenos cócteles · Lugar para bailar",
+        "addres": "Edificio SABA, local 4 segundo nivel, Alameda Franklin Delano Roosevelt, San Salvador",
+        "telefono": "7291 6386",
+        "extraInf": {
+            "estrella": "4.3(20)",
+            "hora": " Abre a las 8 a.m.",
+            "local": "Local de ambiente",
+            "nombre": "Divinos Club Bar"
+        }
+    },
+    {
+        "nombre": "Club Bar Tio Sam",
+        "tipo": "Sirve comida en el bar",
+        "addres": "entre y, 29 Calle Poniente &, 21 Avenida Norte, San Salvador",
+        "telefono": "7549 8910",
+        "extraInf": {
+            "estrella": "4.0(105)",
+            "hora": "\"Es bonito para botar el estres lo unico que no hay show continuos\"",
+            "local": "Bar",
+            "nombre": "Club Bar Tio Sam"
+        }
+    },
+    {
+        "nombre": "Lips Club Bar",
+        "tipo": "Not found Local",
+        "addres": "P.º Gral. Escalón 5146, San Salvador",
+        "telefono": "2263 6260",
+        "extraInf": {
+            "estrella": "3.9(87)",
+            "hora": "\"El club más perron de El Salvador.\"",
+            "local": "Club nocturno",
+            "nombre": "Lips Club Bar"
+        }
+    },
+    {
+        "nombre": "Pose Club Bar",
+        "tipo": "Not found Local",
+        "addres": "9a Calle Poniente, San Salvador",
+        "telefono": "2562 1400",
+        "extraInf": {
+            "estrella": "4.3(216)",
+            "hora": " 2 a.m.",
+            "local": "Bar",
+            "nombre": "Pose Club Bar"
+        }
+    },
+    {
+        "nombre": "Blue Club Bar",
+        "tipo": "Solo dinero en efectivo · Buenos cócteles · Lugar para bailar",
+        "addres": "Bo El Transito, 1ra ave nte local 12, Apopa",
+        "telefono": "6924 9063",
+        "extraInf": {
+            "estrella": "4.2(27)",
+            "hora": "p",
+            "local": "Club nocturno",
+            "nombre": "Blue Club Bar"
+        }
+    },
+    {
+        "nombre": "Bunny's Night Club",
+        "tipo": "Buenos cócteles · Lugar para bailar",
+        "addres": "P.º Gral. Escalón, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "4.0(85)",
+            "hora": " Abre a las 7 p.m.",
+            "local": "Club nocturno",
+            "nombre": "Bunny's Night Club"
+        }
+    },
+    {
+        "nombre": "Luxor Bar Lounge",
+        "tipo": "Tiene bar con juegos",
+        "addres": "Blvd. Constitución, San Salvador",
+        "telefono": "2262 3753",
+        "extraInf": {
+            "estrella": "4.2(152)",
+            "hora": "\"Citas no hay solo baile y puro cotorreo\"",
+            "local": "Bar",
+            "nombre": "Luxor Bar Lounge"
+        }
+    },
+    {
+        "nombre": "Club bar Elite",
+        "tipo": "Not found Local",
+        "addres": "P.º Gral. Escalón 3916, San Salvador 1101",
+        "telefono": "6680 3500",
+        "extraInf": {
+            "estrella": "4.2(5)",
+            "hora": "a",
+            "local": "Bar",
+            "nombre": "Club bar Elite"
+        }
+    },
+    {
+        "nombre": "Kairos",
+        "tipo": "No se aceptan reservas · Presentaciones en vivo · Lugar para bailar",
+        "addres": "PQ7W+P2R, Blvr. De Los Heroes, San Salvador",
+        "telefono": "2225 9480",
+        "extraInf": {
+            "estrella": "4.3(62)",
+            "hora": "\"Excelente ambiente y muy seguro podes disfrutar tranquilamente\"",
+            "local": "Club nocturno",
+            "nombre": "Kairos"
+        }
+    },
+    {
+        "nombre": "Club La Dalia",
+        "tipo": "Not found Local",
+        "addres": "2a Calle Oriente, San Salvador",
+        "telefono": "2556 9570",
+        "extraInf": {
+            "estrella": "4.5(1.4 K)",
+            "hora": " Abre a la 1 p.m.",
+            "local": "Bar",
+            "nombre": "Club La Dalia"
+        }
+    },
+    {
+        "nombre": "Pasarela Men's Club",
+        "tipo": "Not found Local",
+        "addres": "PQ7W+C3R, San Salvador",
+        "telefono": "2300 8712",
+        "extraInf": {
+            "estrella": "4.0(36)",
+            "hora": " Abre a las 9 a.m.",
+            "local": "",
+            "nombre": "Pasarela Men's Club"
+        }
+    },
+    {
+        "nombre": "Emporium",
+        "tipo": "Not found Local",
+        "addres": "Alameda Manuel Enrique Araujo 1066, San Salvador",
+        "telefono": "7524 0559",
+        "extraInf": {
+            "estrella": "4.2(27)",
+            "hora": "a",
+            "local": "Club de entretenimiento para adultos",
+            "nombre": "Emporium"
+        }
+    },
+    {
+        "nombre": "Bar Music Discotec",
+        "tipo": "Buenos cócteles · Lugar para bailar",
+        "addres": "PQ4P+V56, Aconcagua, San Salvador",
+        "telefono": "7609 4571",
+        "extraInf": {
+            "estrella": "4.3(54)",
+            "hora": "\"Buena musica\"",
+            "local": "",
+            "nombre": "Bar Music Discotec"
+        }
+    },
+    {
+        "nombre": "Space Club",
+        "tipo": "Not found Local",
+        "addres": "MQV7+3CJ, Av. Las Magnolias, San Salvador",
+        "telefono": "7438 6702",
+        "extraInf": {
+            "estrella": "3.9(390)",
+            "hora": " 2 a.m.",
+            "local": "Club de baile",
+            "nombre": "Space Club"
+        }
+    },
+    {
+        "nombre": "Hot Zone Club Bar",
+        "tipo": "Not found Local",
+        "addres": "PR32+846, 17 Avenida Nte., San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "3.0(2)",
+            "hora": " 2 a.m.",
+            "local": "Bar",
+            "nombre": "Hot Zone Club Bar"
+        }
+    },
+    {
+        "nombre": "Keops Club Bar",
+        "tipo": "Se va a bailar",
+        "addres": "Av. Paseo, San Salvador",
+        "telefono": "7659 7518",
+        "extraInf": {
+            "estrella": "4.5(13)",
+            "hora": "\"Buen lugar para el after party, shows continuos para caballeros.\"",
+            "local": "Club nocturno",
+            "nombre": "Keops Club Bar"
+        }
+    },
+    {
+        "nombre": "A L I V E",
+        "tipo": "Buenos cócteles · Música en vivo · Lugar para bailar",
+        "addres": "MQR6+39P, Blvr. Sergio Viera De Mello, San Salvador",
+        "telefono": "2563 4943",
+        "extraInf": {
+            "estrella": "4.1(60)",
+            "hora": "\"Recomendable, buen ambiente\"",
+            "local": "Club nocturno",
+            "nombre": "A L I V E"
+        }
+    },
+    {
+        "nombre": "Glow Bar & Restaurant",
+        "tipo": "Not found Local",
+        "addres": "P.º Gral. Escalón, San Salvador",
+        "telefono": "7127 1383",
+        "extraInf": {
+            "estrella": "3.1(24)",
+            "hora": "a",
+            "local": "",
+            "nombre": "Glow Bar & Restaurant"
+        }
+    },
+    {
+        "nombre": "La Guarida Gastrobar",
+        "tipo": "Buenos cócteles · Música en vivo · Karaoke",
+        "addres": "9a Calle Poniente 4313, San Salvador",
+        "telefono": "2529 5745",
+        "extraInf": {
+            "estrella": "4.3(28)",
+            "hora": "\"La discoteca con buen piso, buena música, mobiliario y lindo bar.\"",
+            "local": "Club nocturno",
+            "nombre": "La Guarida Gastrobar"
+        }
+    },
+    {
+        "nombre": "Living SV",
+        "tipo": "Asientos al aire libre · Buenos cócteles · Lugar para bailar",
+        "addres": "Calle Padres Aguilar #617 Colonia Escalon San Salvador CP, 1101",
+        "telefono": "7008 3924",
+        "extraInf": {
+            "estrella": "4.4(629)",
+            "hora": " 2 a.m.",
+            "local": "Bar",
+            "nombre": "Living SV"
+        }
+    },
+    {
+        "nombre": "Circus Cabaret",
+        "tipo": "Música en vivo · Lugar para bailar · Comida en el bar",
+        "addres": "79 Avenida Nte. 620, San Salvador",
+        "telefono": "7203 3463",
+        "extraInf": {
+            "estrella": "4.0(369)",
+            "hora": "\"La bartender una hermosura\"",
+            "local": "Club nocturno",
+            "nombre": "Circus Cabaret"
+        }
+    },
+    {
+        "nombre": "Blue Club Bar - Apopa",
+        "tipo": "Se va a bailar",
+        "addres": "RR3C+4W7, 1 calle oriente, Apopa",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "5.0(1)",
+            "hora": " 2 a.m.",
+            "local": "Club nocturno",
+            "nombre": "Blue Club Bar - Apopa"
+        }
+    },
+    {
+        "nombre": "Club Zou Bar",
+        "tipo": "Buenos cócteles · Lugar para bailar",
+        "addres": "C. Monseñor Escriva De Balaguer vas 12, San Salvador",
+        "telefono": "7924 7697",
+        "extraInf": {
+            "estrella": "4.3(9)",
+            "hora": " Abre a las 10 a.m.",
+            "local": "Club nocturno",
+            "nombre": "Club Zou Bar"
+        }
+    },
+    {
+        "nombre": "Luna Roja Club Bar",
+        "tipo": "Se va a bailar",
+        "addres": "Casa 4b, San Salvador",
+        "telefono": "7829 6183",
+        "extraInf": {
+            "estrella": "4.0(4)",
+            "hora": " Abre a las 2 p.m.",
+            "local": "Club nocturno",
+            "nombre": "Luna Roja Club Bar"
+        }
+    },
+    {
+        "nombre": "Club Bar 24/7",
+        "tipo": "Not found Local",
+        "addres": "MPG9+XQ5 santa Mónica, 5 Calle oriente, #07, 5 Calle Ote. 7, Santa Tecla",
+        "telefono": "2542 1686",
+        "extraInf": {
+            "estrella": "3.7(3)",
+            "hora": " Abre a las 9 a.m. del lun",
+            "local": "",
+            "nombre": "Club Bar 24/7"
+        }
+    },
+    {
+        "nombre": "Texas club bar",
+        "tipo": "Not found Local",
+        "addres": "PQ6J+CC5, Av. Bernal, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "5.0(1)",
+            "hora": "a",
+            "local": "Bar",
+            "nombre": "Texas club bar"
+        }
+    },
+    {
+        "nombre": "D'amantes Discotec Bar",
+        "tipo": "Buenos cócteles · Lugar para bailar",
+        "addres": "Alameda Manuel Enrique Araujo 1066, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "4.7(13)",
+            "hora": "\"Me la pasé súper perreo intenso jajsja\"",
+            "local": "Club nocturno",
+            "nombre": "D'amantes Discotec Bar"
+        }
+    },
+    {
+        "nombre": "The zone club",
+        "tipo": "Not found Local",
+        "addres": "9a Calle Poniente 4340 Poniente, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "5.0(5)",
+            "hora": "\"Bonito ambiente chicas muy hermosas buena música\"",
+            "local": "Bar",
+            "nombre": "The zone club"
+        }
+    },
+    {
+        "nombre": "California Club Nocturno",
+        "tipo": "Se va a bailar",
+        "addres": "MRM5+WWX, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "4.0(18)",
+            "hora": "\"Complacido, muy amables las chicas.\"",
+            "local": "Club nocturno",
+            "nombre": "California Club Nocturno"
+        }
+    },
+    {
+        "nombre": "Superb",
+        "tipo": "Buenos cócteles · Lugar para bailar",
+        "addres": "Plaza Adastra, San Salvador",
+        "telefono": "7538 6263",
+        "extraInf": {
+            "estrella": "3.3(248)",
+            "hora": "\"El mejor club al que eh asistido, vale la pena la inversión!\"",
+            "local": "Club nocturno",
+            "nombre": "Superb"
+        }
+    },
+    {
+        "nombre": "Eleven Club VIP",
+        "tipo": "Ofrece buenos cócteles",
+        "addres": "MQR6+RW5, Blvr. Sergio Viera De Mello, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "5.0(2)",
+            "hora": "a",
+            "local": "Bar",
+            "nombre": "Eleven Club VIP"
+        }
+    },
+    {
+        "nombre": "BURLESQUE",
+        "tipo": "Not found Local",
+        "addres": "Rotonda 2 arriba de, Luminare, Centro Comercial Balam Quitze, Paseo general escalon y 89 avenida sur, condominio, San Salvador",
+        "telefono": "7127 9892",
+        "extraInf": {
+            "estrella": "3.3(23)",
+            "hora": "\"La bueno, tienen muy buen Dj.\"",
+            "local": "Club de entretenimiento para adultos",
+            "nombre": "BURLESQUE"
+        }
+    },
+    {
+        "nombre": "Club 46 El Salvador",
+        "tipo": "Not found Local",
+        "addres": "Boulevard Altamira 15, San Salvador",
+        "telefono": "7245 5016",
+        "extraInf": {
+            "estrella": "4.8(4)",
+            "hora": " Abre a las 9 a.m.",
+            "local": "Club",
+            "nombre": "Club 46 El Salvador"
+        }
+    },
+    {
+        "nombre": "Casa Keyson",
+        "tipo": "Not found Local",
+        "addres": "PR67+C2F, Pasaje Viaud, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "3.8(35)",
+            "hora": "\"Exelente lugar para ir a basilar con los amigos exelente\"",
+            "local": "",
+            "nombre": "Casa Keyson"
+        }
+    },
+    {
+        "nombre": "The Bunker Bar",
+        "tipo": "Buenos cócteles · Karaoke",
+        "addres": "MQR7+H4G, San Salvador",
+        "telefono": "2521 6404",
+        "extraInf": {
+            "estrella": "4.1(195)",
+            "hora": " Abre a las 6 p.m.",
+            "local": "Bar",
+            "nombre": "The Bunker Bar"
+        }
+    },
+    {
+        "nombre": "La tabernita club bar",
+        "tipo": "Not found Local",
+        "addres": "MQWP+QRR, Sexta y décima, calle poniente y, San Salvador",
+        "telefono": "7793 8982",
+        "extraInf": {
+            "estrella": "4.7(6)",
+            "hora": " Abre a las 6 p.m.",
+            "local": "Chiringuito",
+            "nombre": "La tabernita club bar"
+        }
+    },
+    {
+        "nombre": "Black And White Discotec Bar",
+        "tipo": "Buenos cócteles · Música en vivo · Karaoke",
+        "addres": "PQ4P+X5, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "4.1(20)",
+            "hora": "\"Muy buena ambiente, y atención al cliente excelente!\"",
+            "local": "Bar",
+            "nombre": "Black And White Discotec Bar"
+        }
+    },
+    {
+        "nombre": "Grekos Bar",
+        "tipo": "Buenos cócteles · Lugar para bailar",
+        "addres": "Alameda Juan Pablo II, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "4.4(11)",
+            "hora": "\"Me gustó mucho el lugar, la música y el ambiente para algo medio tranquilo\"",
+            "local": "Local de ambiente",
+            "nombre": "Grekos Bar"
+        }
+    },
+    {
+        "nombre": "Rolex Club & Bar",
+        "tipo": "Not found Local",
+        "addres": "7a Calle Poniente casa 4858, San Salvador",
+        "telefono": "7189 1472",
+        "extraInf": {
+            "estrella": "3.8(13)",
+            "hora": " Abre a las 5 p.m.",
+            "local": "Club de entretenimiento para adultos",
+            "nombre": "Rolex Club & Bar"
+        }
+    },
+    {
+        "nombre": "Olympus Strip Club El Salvador",
+        "tipo": "Not found Local",
+        "addres": "11 Calle Pte 3916, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "4.4(20)",
+            "hora": " Abre a las 8 p.m.",
+            "local": "Club de entretenimiento para adultos",
+            "nombre": "Olympus Strip Club El Salvador"
+        }
+    },
+    {
+        "nombre": "Kiss Fresh SV",
+        "tipo": "Not found Local",
+        "addres": "Blvd. Constitución 3, San Salvador 1101",
+        "telefono": "6828 7948",
+        "extraInf": {
+            "estrella": "4.3(97)",
+            "hora": "\"Solo recomendaría para tomar.\"",
+            "local": "Bar",
+            "nombre": "Kiss Fresh SV"
+        }
+    },
+    {
+        "nombre": "Xulas Club",
+        "tipo": "Asientos en la terraza · Asientos al aire libre · Música en vivo",
+        "addres": "y, Edificio Boston local 3, primera planta, 25 Avenida Nte., San Salvador CP 1101",
+        "telefono": "7595 1635",
+        "extraInf": {
+            "estrella": "No hay opiniones.",
+            "hora": "No vende comida para llevar",
+            "local": "Bar",
+            "nombre": "Xulas Club"
+        }
+    },
+    {
+        "nombre": "La Calandria Bar y Karaoke",
+        "tipo": "Not found Local",
+        "addres": "Blvd. Constitución, San Salvador",
+        "telefono": "7815 8990",
+        "extraInf": {
+            "estrella": "4.2(13)",
+            "hora": " Abre a las 6 p.m.",
+            "local": "Bar",
+            "nombre": "La Calandria Bar y Karaoke"
+        }
+    },
+    {
+        "nombre": "Oasis Bar",
+        "tipo": "Not found Local",
+        "addres": "MRX7+P85, San Salvador",
+        "telefono": "6427 2353",
+        "extraInf": {
+            "estrella": "5.0(2)",
+            "hora": "a",
+            "local": "Bar",
+            "nombre": "Oasis Bar"
+        }
+    },
+    {
+        "nombre": "Las Vegas",
+        "tipo": "Se va a bailar",
+        "addres": "MERCADO EX CUARTEL, 10a Avenida Sur, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "5.0(2)",
+            "hora": "a",
+            "local": "Club nocturno",
+            "nombre": "Las Vegas"
+        }
+    },
+    {
+        "nombre": "Restaurante Bar La Estrella",
+        "tipo": "Not found Local",
+        "addres": "C. Gabriela Mistral 546, San Salvador",
+        "telefono": "7160 7346",
+        "extraInf": {
+            "estrella": "4.2(49)",
+            "hora": "",
+            "local": "Restaurante",
+            "nombre": "Restaurante Bar La Estrella"
+        }
+    },
+    {
+        "nombre": "VELVET CLUB",
+        "tipo": "Ofrece buenos cócteles",
+        "addres": "Avenida Bernal casa 2A, San Salvador CP 1101",
+        "telefono": "7668 0641",
+        "extraInf": {
+            "estrella": "4.4(5)",
+            "hora": "Consumo en el lugar",
+            "local": "Parrilla",
+            "nombre": "VELVET CLUB"
+        }
+    },
+    {
+        "nombre": "Casa de la perdición (King OF Fighters)",
+        "tipo": "Not found Local",
+        "addres": "PR86+J5V, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "4.0(3)",
+            "hora": "\"Excelente atención\"",
+            "local": "Club de entretenimiento para adultos",
+            "nombre": "Casa de la perdición (King OF Fighters)"
+        }
+    },
+    {
+        "nombre": "Club Bar DIVAS",
+        "tipo": "Solo dinero en efectivo · Asientos al aire libre · Buenos cócteles",
+        "addres": "P47V+F9X, Santo Domingo",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "3.7(50)",
+            "hora": " Abre a las 6 p.m.",
+            "local": "Bar",
+            "nombre": "Club Bar DIVAS"
+        }
+    },
+    {
+        "nombre": "VANITY",
+        "tipo": "Not found Local",
+        "addres": "C. Atitlan 2947, San Salvador",
+        "telefono": "6443 2611",
+        "extraInf": {
+            "estrella": "4.3(19)",
+            "hora": "\"100% recomendado.\"",
+            "local": "",
+            "nombre": "VANITY"
+        }
+    },
+    {
+        "nombre": "galaxy night club",
+        "tipo": "Solo dinero en efectivo · Lugar para bailar · Comida en el bar",
+        "addres": "13.588062,-88.078947, Ruta De Paz",
+        "telefono": "2680 5036",
+        "extraInf": {
+            "estrella": "4.0(68)",
+            "hora": "\"Excelente atension\"",
+            "local": "Karaoke",
+            "nombre": "galaxy night club"
+        }
+    },
+    {
+        "nombre": "LIVING'S",
+        "tipo": "Se va a bailar",
+        "addres": "MQV7+6M2, C. Las Palmas, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "4.5(8)",
+            "hora": "a",
+            "local": "",
+            "nombre": "LIVING'S"
+        }
+    },
+    {
+        "nombre": "Xclusive club bar",
+        "tipo": "Not found Local",
+        "addres": "PQ72+44R, Calle Republica Federal De Alemania, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "No hay opiniones.",
+            "hora": "Consumo en el lugar",
+            "local": "Bar",
+            "nombre": "Xclusive club bar"
+        }
+    },
+    {
+        "nombre": "Karaoke 40/20",
+        "tipo": "Karaoke · Lugar para bailar",
+        "addres": "Calle Republica Federal De Alemania 120, San Salvador",
+        "telefono": "7947 4040",
+        "extraInf": {
+            "estrella": "4.1(489)",
+            "hora": " Abre a las 6 p.m.",
+            "local": "Club nocturno",
+            "nombre": "Karaoke 40/20"
+        }
+    },
+    {
+        "nombre": "Circle Bar & Lounge",
+        "tipo": "Not found Local",
+        "addres": "Plaza Algodon, C. El Algodon, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "4.7(15)",
+            "hora": "\"A partir de las 3 pm casi siempre ya se puede llegar a consumir cerveza.\"",
+            "local": "Bar",
+            "nombre": "Circle Bar & Lounge"
+        }
+    },
+    {
+        "nombre": "RAMTOH discotec-bar",
+        "tipo": "Buenos cócteles · Lugar para bailar",
+        "addres": "entre 11 y, C. El Mirador 707, San Salvador",
+        "telefono": "6959 6143",
+        "extraInf": {
+            "estrella": "3.0(2)",
+            "hora": " Abre a las 7 p.m.",
+            "local": "",
+            "nombre": "RAMTOH discotec-bar"
+        }
+    },
+    {
+        "nombre": "Club Bar Casa Roja",
+        "tipo": "Not found Local",
+        "addres": "Calle Gabriela Mistral, casa # 546 san salvador El Zenzotle",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "4.0(1)",
+            "hora": "a",
+            "local": "Centro de estética",
+            "nombre": "Club Bar Casa Roja"
+        }
+    },
+    {
+        "nombre": "KEOPS CLUB BAR",
+        "tipo": "Se va a bailar",
+        "addres": "Av. Paseo 2926, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "No hay opiniones.",
+            "hora": " Abre a las 7 p.m.",
+            "local": "Club nocturno",
+            "nombre": "KEOPS CLUB BAR"
+        }
+    },
+    {
+        "nombre": "Fussion Club El Salvador (Sucursal Santa)",
+        "tipo": "Solo dinero en efectivo · Buenos cócteles · Lugar para bailar",
+        "addres": "XCJ3+R9P, Santa Ana",
+        "telefono": "7495 2860",
+        "extraInf": {
+            "estrella": "4.1(21)",
+            "hora": "\"Because the place has potential.\"",
+            "local": "Club nocturno",
+            "nombre": "Fussion Club El Salvador (Sucursal Santa)"
+        }
+    },
+    {
+        "nombre": "PK2 DISCOTEC BAR",
+        "tipo": "Not found Local",
+        "addres": "PQ4M+C7F, San Salvador",
+        "telefono": "6145 4538",
+        "extraInf": {
+            "estrella": "4.3(9)",
+            "hora": "a",
+            "local": "Bar",
+            "nombre": "PK2 DISCOTEC BAR"
+        }
+    },
+    {
+        "nombre": "Insanos Mc El Salvador club",
+        "tipo": "Not found Local",
+        "addres": "PQ56+5Q5, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "5.0(6)",
+            "hora": "\"Tienen buena comida\"",
+            "local": "Bar",
+            "nombre": "Insanos Mc El Salvador club"
+        }
+    },
+    {
+        "nombre": "Discoteca Guadalajara",
+        "tipo": "Not found Local",
+        "addres": "PQ4M+QQ5, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "4.0(4)",
+            "hora": " Abre a las 7 p.m.",
+            "local": "Parrilla",
+            "nombre": "Discoteca Guadalajara"
+        }
+    },
+    {
+        "nombre": "Guadalajara Bar-Restaurante-Karaoke",
+        "tipo": "Not found Local",
+        "addres": "Avenida Pasco, Colonia Miramonte #820 San Salvador CP, 1101",
+        "telefono": "7659 7518",
+        "extraInf": {
+            "estrella": "4.3(23)",
+            "hora": "\"Me gusta mucho en lo personal precio accesibles.\"",
+            "local": "Restaurante",
+            "nombre": "Guadalajara Bar-Restaurante-Karaoke"
+        }
+    },
+    {
+        "nombre": "Billar La Oficina Club",
+        "tipo": "Not found Local",
+        "addres": "5a Calle Pte. 47, Mejicanos",
+        "telefono": "7621 2226",
+        "extraInf": {
+            "estrella": "5.0(8)",
+            "hora": "\"Buen ambiente\"",
+            "local": "Comercio",
+            "nombre": "Billar La Oficina Club"
+        }
+    },
+    {
+        "nombre": "Los Mismos Discotec",
+        "tipo": "Se va a bailar",
+        "addres": "y, 2 Avenida Norte, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "3.2(6)",
+            "hora": "a",
+            "local": "Club nocturno",
+            "nombre": "Los Mismos Discotec"
+        }
+    },
+    {
+        "nombre": "La Santa Bar",
+        "tipo": "Buenos cócteles · Lugar para bailar",
+        "addres": "FRH7+GX8, San Miguel",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "3.6(9)",
+            "hora": " Abre a las 10 p.m.",
+            "local": "Club nocturno",
+            "nombre": "La Santa Bar"
+        }
+    },
+    {
+        "nombre": "Bar Cocktails & Dreams",
+        "tipo": "Not found Local",
+        "addres": "Col. Miramontes, Av los Andes, #3, Zona Real, Dirección:, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "4.0(5)",
+            "hora": "a",
+            "local": "Club de entretenimiento para adultos",
+            "nombre": "Bar Cocktails & Dreams"
+        }
+    },
+    {
+        "nombre": "Rumores",
+        "tipo": "Not found Local",
+        "addres": "25 Avenida Sur &, 12 Calle Pte., San Salvador",
+        "telefono": "7193 7154",
+        "extraInf": {
+            "estrella": "4.4(9)",
+            "hora": "\"Bonito el ambiente lo recomiendo\"",
+            "local": "Bar",
+            "nombre": "Rumores"
+        }
+    },
+    {
+        "nombre": "K-prichos club bar",
+        "tipo": "Not found Local",
+        "addres": "sur y, Avenida Jerusalen 205, San Salvador 1101",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "3.7(3)",
+            "hora": " Abre a las 6 p.m.",
+            "local": "Club de entretenimiento para adultos",
+            "nombre": "K-prichos club bar"
+        }
+    },
+    {
+        "nombre": "Billar El Lucky One",
+        "tipo": "Not found Local",
+        "addres": "MRX5+W7C, San Salvador",
+        "telefono": "2222 8076",
+        "extraInf": {
+            "estrella": "3.9(67)",
+            "hora": "a",
+            "local": "Bar",
+            "nombre": "Billar El Lucky One"
+        }
+    },
+    {
+        "nombre": "Sttiusa",
+        "tipo": "Se va a bailar",
+        "addres": "14 Avenida Nte. 636, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "No hay opiniones.",
+            "hora": "a",
+            "local": "Local de ambiente",
+            "nombre": "Sttiusa"
+        }
+    },
+    {
+        "nombre": "Karma",
+        "tipo": "Not found Local",
+        "addres": "Av. Los Andes 2848, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "4.5(10)",
+            "hora": " Abre a las 5 p.m.",
+            "local": "Bar",
+            "nombre": "Karma"
+        }
+    },
+    {
+        "nombre": "Club bar antojitos noy",
+        "tipo": "Not found Local",
+        "addres": "PR47+7GG norte 216 surita, 10a Avenida Norte, San Salvador",
+        "telefono": "Not found number",
+        "extraInf": {
+            "estrella": "No hay opiniones.",
+            "hora": "a",
+            "local": "Bar",
+            "nombre": "Club bar antojitos noy"
+        }
+    }
+]
+
