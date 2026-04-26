@@ -48,6 +48,18 @@
         }
     },
     {
+        "nombre": "Rumores Club Bar",
+        "tipo": "Cover $4.00 con derecho a una bebida",
+        "addres": "25av. sur y 12 calle poniente, casa de esquina color verde frente a losa talleres de impresa repuestos, San Salvador",
+        "telefono": "7193-7154",
+        "extraInf": {
+            "estrella": "RECOMENDADO(SIN PROBAR)",
+            "hora": "Lunes a jueves de 12.00 del medio día a 10 de la noche",
+            "local": "Club Servicio Sexual",
+            "nombre": "Rumores Club Bar"
+        }
+    },
+    {
         "nombre": "Streeper Club Bar",
         "tipo": "Buenos cócteles · Lugar para bailar · Bebidas en hora feliz",
         "addres": "PQ3H+P7W, Alameda Juan Pablo II, San Salvador",
