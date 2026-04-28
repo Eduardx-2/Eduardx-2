@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chulonada SV - Buscador de Servicios Sexuales</title>
+    <style>
+        /* Variables de colores basados en el logo */
+        :root {
+            --bg-color: #050505;
+            --card-bg: #121212;
+            --neon-purple: #b026ff;
+            --neon-glow: 0 0 10px rgba(176, 38, 255, 0.7), 0 0 20px rgba(176, 38, 255, 0.5);
+            --text-color: #f1f1f1;
+            --text-muted: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        
+       .logo-container {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        #logoVideo {
+            max-width: 355px; /
+            height: auto;
+            border-radius: 10px; 
+            filter: drop-shadow(0 0 15px rgba(176, 38, 255, 0.4)); 
+        }
+
+       
+        .topbar {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 14px;
+            align-items: center;
+
+            padding: 14px 16px;
+            border-radius: 28px;
+
+            background: rgba(8, 4, 15, .6);
+            backdrop-filter: blur(15px);
+
+            border: 1px solid rgba(207,52,255,.2);
+            box-shadow: 0 10px 40px rgba(0,0,0,.5);
+        }
+
+        /* LOGO + TEXTO */
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            }
+
+            .brand img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+
+            border-radius: 16px;
+            padding: 5px;
+
+            border: 1px solid rgba(255,255,255,.1);
+            box-shadow: 0 0 20px rgba(207,52,255,.4);
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+        .brand p {
+            margin: 2px 0 0;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,.6);
+        }
+
+        /* BUSCADOR */
+        .searchBox {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
+
+            padding: 10px;
+            border-radius: 20px;
+
+            background: rgba(0,0,0,.3);
+            border: 1px solid rgba(207,52,255,.3);
+        }
+
+        .searchBox input {
+            border: none;
+            outline: none;
+            background: transparent;
+
+            color: white;
+            font-size: 1rem;
+
+            padding: 12px;
+        }
+
+        .searchBox input::placeholder {
+            color: rgba(255,255,255,.5);
+        }
+
+        .searchBox button {
+            border: none;
+            border-radius: 14px;
+
+            padding: 12px 18px;
+            font-weight: bold;
+
+            background: linear-gradient(135deg, #ffcc33, #ffe88a);
+            color: #1a071d;
+
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .searchBox button:hover {
+            transform: scale(1.05);
+        }
+
+        /* RESULTADOS */
+       #results {
+            width: 100%;
+            max-width: 1200px; 
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap: 20px; 
+            padding: 20px;
+        }
+
+        /* --- AQUÍ FALTABAN LOS ESTILOS DE LA TARJETA --- */
+        .card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border-top: 3px solid var(--neon-purple);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card h2 {
+            margin: 0 0 10px 0;
+            color: #fff;
+            font-size: 22px;
+            text-shadow: 0 0 5px rgba(176, 38, 255, 0.5);
+        }
+
+        .card p {
+            margin: 8px 0;
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .card p strong {
+            color: var(--text-color);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: rgba(176, 38, 255, 0.2);
+            color: var(--neon-purple);
+            border: 1px solid var(--neon-purple);
+            border-radius: 6px;
+            font-size: 13px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .error-msg {
+            color: #ff4a4a;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Estilo para el botón de Maps */
+        .maps-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, #ffcc33, #ffb300);
+            color: #1a071d;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 204, 51, 0.2);
+        }
+
+        .maps-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 204, 51, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .maps-btn svg {
+            flex-shrink: 0;
+        }
+
+        /* Estilo de la tarjeta para que se vea bien en la cuadrícula */
+        /* --- ESTILOS DEL BANNER INICIAL ACTUALIZADOS CON DIMENSIONES --- */
+        .hero {
+            margin-top: 60px; /* Separación superior */
+            width: 100%;
+            max-width: 1000px; /* Dimensión máxima para centrar el contenido */
+            border-radius: 34px;
+            overflow: hidden;
+            position: relative;
+            background:
+                linear-gradient(135deg, rgba(255,204,51,.08), transparent 28%),
+                linear-gradient(135deg, rgba(207,52,255,.15), rgba(255,255,255,.03)),
+                rgba(255,255,255,.03);
+
+            border: 1px solid rgba(255,255,255,.07);
+            box-shadow: 0 10px 50px rgba(0,0,0,.5);
+            padding: 28px;
+            box-sizing: border-box; /* Añadido para responsive */
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 75% 20%, rgba(207,52,255,.2), transparent 16%),
+                radial-gradient(circle at 20% 70%, rgba(255,204,51,.09), transparent 12%);
+            pointer-events: none;
+        }
+
+        /* GRID - Controla la separación de las dos columnas */
+        .hero-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 40px; /* Dimensión de separación entre texto y tarjeta de stats */
+            align-items: center;
+        }
+
+        /* TEXTO PRINCIPAL */
+        .hero h2 {
+            margin: 0 0 15px;
+            font-size: 3.5rem; /* Dimensión de fuente extra grande */
+            line-height: 1.1; /* Interlineado compacto */
+            color: #fff;
+            font-weight: 800;
+        }
+
+        .hero .accent {
+            color: #ffcc33;
+            text-shadow: 0 0 15px rgba(255,204,51,.4);
+        }
+
+        .hero p {
+            margin: 0 0 25px;
+            color: rgba(255,255,255,.7);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            max-width: 550px; /* Dimensión límite para legibilidad */
+        }
+
+        /* BOTONES FILTRO (PILLS) */
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px; /* Separación entre botones */
+            align-items: center;
+        }
+
+        .pill {
+            padding: 8px 18px; /* Dimensión interna de los botones */
+            border-radius: 999px;
+            background: rgba(255,255,255,.05);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,.1);
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .pill:hover {
+            background: rgba(207,52,255,.2);            
+        }
+
+        .pill.active {
+            background: rgba(176, 38, 255, 0.1);
+            border-color: rgba(176, 38, 255, 0.5);
+            color: #fff;
+        }
+
+        /* BOTÓN LIMPIAR */
+        .mini-btn {
+            padding: 8px 18px;
+            border-radius: 25px;
+            background: transparent;
+            color: rgba(255,255,255,0.5);
+            border: 1px solid rgba(255,255,255,.1);
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .mini-btn:hover {
+            border-color: #ffcc33;
+            color: #fff;
+        }
+
+        /* TARJETA DERECHA (STATS) */
+        .hero-card {
+            display: grid;
+            gap: 14px;
+            padding: 25px; /* Dimensión de relleno interno de la tarjeta de stats */
+            width: 320px; /* Dimensión de ancho fijo */
+            border-radius: 24px;
+            background: #141414;
+            border: 1px solid rgba(255,255,255,.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* STATS INDIVIDUALES */
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0; /* Dimensión de altura de cada fila */
+            border-bottom: 1px solid rgba(255,255,255,.05);
+        }
+
+        .stat:last-child {
+            border-bottom: none;
+        }
+
+        .stat b {
+            font-size: 1.6rem; /* Dimensión de los números grandes */
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .stat small {
+            color: #888;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* BADGE DE STATS */
+        .stat-badge {
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border: 1px solid rgba(255, 204, 51, 0.3);
+            color: #ffcc33;
+            background: rgba(255, 204, 51, 0.05);
+        }
+
+        /* RESPONSIVE EXISTENTE Y NUEVO PARA MÓVILES */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .hero-card {
+                width: 100%; /* Se adapta al ancho en móviles */
+                box-sizing: border-box;
+            }
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* --- NUEVO BLOQUE RESPONSIVE (MÓVILES PEQUEÑOS) --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px; /* Reducir padding general */
+            }
+
+            .topbar {
+                grid-template-columns: 1fr; /* Apilar elementos de la barra superior */
+                gap: 20px;
+                text-align: center;
+            }
+
+            .brand {
+                flex-direction: column; /* Apilar logo y texto */
+                justify-content: center;
+            }
+
+            .brand img {
+                margin-bottom: 10px;
+            }
+
+            .searchBox {
+                grid-template-columns: 1fr; /* Apilar input y botón de búsqueda */
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .searchBox input {
+                text-align: center;
+                box-sizing: border-box;
+                width: 100%;
+            }
+
+            .searchBox button {
+                width: 100%;
+                padding: 15px;
+            }
+
+            #logoVideo {
+                max-width: 100%; /* Evitar que el video se desborde */
+                height: auto;
+            }
+
+            .hero {
+                padding: 20px; /* Reducir padding interior del hero */
+            }
+
+            .hero h2 {
+                font-size: 2rem; /* Achicar el título principal */
+            }
+            
+            #results {
+                padding: 10px; /* Reducir padding contenedor resultados */
+                grid-template-columns: 1fr; /* Una columna para resultados en móviles */
+            }
+        }
+        /* --- FIN BLOQUE RESPONSIVE --- */
+
+    </style>
+</head>
+<body>
+
+   <div class="logo-container">
+    <video autoplay muted loop playsinline id="logoVideo">
+        <source src="vidm.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    </div>
+
+   <header class="topbar">
+    <div class="brand">
+        <img src="DhT0D.jpg" alt="Logo">
+        <div>
+        <h1>CHULONADA SV</h1>
+        <p>Directorio nocturno de serviciós sexuales</p>
+        </div>
+    </div>
+
+    <div class="searchBox">
+        <input type="text" id="searchInput" placeholder="Ingresa el nombre o departamento...">
+        <button id="searchBtn">Buscar</button>
+    </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h2>Encuentra tu <span class="accent">prostibulo</span> ideal para tú noche.</h2>
+          <p>
+            Tu sitio confiable ideal para encontrar servicios de placer en El Salvador. Con nuestro buscador podrás descubrir nuevos lugares que aún no has explorado.
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <div class="stat">
+            <div>
+              <small>Lugares</small><br>
+              <b id="totalCount">100+</b>
+            </div>
+            <span class="badge">Lugares</span>
+          </div>
+          <div class="stat">
+            <div>
+              <small>San Salvador</small><br>
+              <b id="matchCount">20+</b>
+            </div>
+            <span class="badge">Lugares</span>
+          </div>
+          <div class="stat">
+            <div>
+              <small>Lugares</small><br>
+              <b>Night Club</b>
+            </div>
+            <span class="badge">El Salvador</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="results">
+        </div>
+    <script>
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            // OCULTAR EL BANNER AL INICIAR LA BÚSQUEDA
+            document.querySelector('.hero').style.display = 'none';
+
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const resultsContainer = document.getElementById('results');
+            
+            if (query === '') {
+                resultsContainer.innerHTML = '<p class="error-msg">Por favor ingresa un nombre o ubicación para buscar.</p>';
+                return;
+            }
+
+            resultsContainer.innerHTML = '<p style="text-align: center; color: var(--neon-purple);">Buscando locales...</p>';
+
+            // Hace la petición al archivo data.json que debe estar en el mismo repositorio de GitHub
+            fetch('https://raw.githubusercontent.com/Eduardx-2/Eduardx-2/refs/heads/main/data_info.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('No se pudo encontrar el archivo data.json en el servidor.');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    resultsContainer.innerHTML = '';
+                    
+                    // Asegurarnos de que iteramos sobre un array 
+       
+                    const dataArray = Array.isArray(data) ? data : [data];
+                    
+                    // Filtrar por nombre y filtrar por ubicación, basicamente estoy haciendo que busque por ciudad u nombre
+                    const resultados = dataArray.filter(item => 
+                        item.nombre && item.nombre.toLowerCase().includes(query)
+                    );
+                    
+                    const ubi = dataArray.filter(item =>
+                        item.addres.split(",").pop() &&  item.addres.split(",").pop().toLowerCase().includes(query) 
+                    );
+                    
+                    if (resultados.length === 0 && ubi.length === 0) {
+                        resultsContainer.innerHTML = '<p class="error-msg">No se encontraron locales con ese nombre.</p>';
+                        return;
+                    }
+                    ubi.forEach(local => {
+                        const card = document.createElement('div');
+                        card.className = 'card';
+                        
+                        // Generar el enlace de búsqueda en Google Maps basado en la dirección
+                         const parts_uri = `${local.nombre},${local.addres}`
+                        const mapsUrl = `https://www.google.com/maps/search/${parts_uri}`;
+
+                        let extraHtml = '';
+                        if (local.extraInf) {
+                            extraHtml = `
+                                <p><strong>Local:</strong> ${local.extraInf.local || 'N/A'}</p>
+                                <p><strong>Horario:</strong> ${local.extraInf.hora || 'N/A'}</p>
+                                <p><strong>Opiniones:</strong> ${local.extraInf.estrella || 'N/A'}</p>
+                            `;
+                        }
+
+                        card.innerHTML = `
+                            <div>
+                                <span class="badge">${local.tipo}</span>
+                                <h2>${local.nombre}</h2>
+                                <p><strong>Dirección:</strong> ${local.addres}</p>
+                                <p><strong>Teléfono:</strong> ${local.telefono}</p>
+                            </div>
+                            <div style="margin-top:15px; border-top:1px solid #222; padding-top:10px; padding-bottom: 10px;">
+                                ${extraHtml}
+                            </div>
+                            
+                            <a href="${mapsUrl}" target="_blank" class="maps-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                </svg>
+                                Ver en Maps
+                            </a>
+                        `;
+                        resultsContainer.appendChild(card);
+                    });
+                    // Renderizar los resultados
+                    resultados.forEach(local => {
+                        const card = document.createElement('div');
+                        card.className = 'card';
+                        
+                        // Generar el enlace de búsqueda en Google Maps basado en la dirección
+                        const parts_uri = `${local.nombre},${local.addres}`
+                        const mapsUrl = `https://www.google.com/maps/search/${parts_uri}`;
+
+                        let extraHtml = '';
+                        if (local.extraInf) {
+                            extraHtml = `
+                                <p><strong>Local:</strong> ${local.extraInf.local || 'N/A'}</p>
+                                <p><strong>Horario:</strong> ${local.extraInf.hora || 'N/A'}</p>
+                                <p><strong>Opiniones:</strong> ${local.extraInf.estrella || 'N/A'}</p>
+                            `;
+                        }
+
+                        card.innerHTML = `
+                            <div>
+                                <span class="badge">${local.tipo}</span>
+                                <h2>${local.nombre}</h2>
+                                <p><strong>Dirección:</strong> ${local.addres}</p>
+                                <p><strong>Teléfono:</strong> ${local.telefono}</p>
+                            </div>
+                            <div style="margin-top:15px; border-top:1px solid #222; padding-top:10px; padding-bottom: 10px;">
+                                ${extraHtml}
+                            </div>
+                            
+                            <a href="${mapsUrl}" target="_blank" class="maps-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                </svg>
+                                Ver en Maps
+                            </a>
+                        `;
+                        resultsContainer.appendChild(card);
+                    });
+                })
+                .catch(error => {
+                    resultsContainer.innerHTML = `<p class="error-msg">Error: ${error.message} <br><br><small>Ocurrio un error en el archivo <b>data.json</b> ERROR PRODUCIDO EN GITHUB</small></p>`;
+                    console.error('Error fetching JSON:', error);
+                });
+            })
+                
+
+        //busqueda www.google.com/maps/search/Club Baby's Spa,Colonia Escalón. pasaje itsmania # 125, San Salvador
+        document.getElementById('searchInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                document.getElementById('searchBtn').click();
+            }
+        });
+    </script>
+</body>
+</html>
