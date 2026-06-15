@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduardxCv</title>
+
+<style>
+/* =========================
+   VARIABLES
+========================= */
+:root {
+    --bg-main: #05070a;
+    --bg-glass: rgba(255,255,255,0.06);
+    --border-glass: rgba(255,255,255,0.08);
+
+    --text-main: #e6e6e6;
+    --text-soft: #b3b3b3;
+
+    --accent: #00f7ff;
+    --accent-2: #ff0077;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #0c0f14, var(--bg-main));
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* =========================
+   CANVAS BACKGROUND
+========================= */
+#bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 20px 40px;
+}
+
+/* =========================
+   PROFILE
+========================= */
+.profile {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+.profile img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 2px solid rgba(0,247,255,.35);
+    box-shadow:
+        0 0 30px rgba(0,247,255,.25),
+        0 0 80px rgba(255,0,119,.15);
+}
+
+.description h1 {
+    font-size: 2.3rem;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 14px;
+}
+
+.description p {
+    max-width: 780px;
+    color: var(--text-soft);
+    line-height: 1.8;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.sections {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all .9s cubic-bezier(.2,.6,.2,1);
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section h2 {
+    color: var(--accent);
+    letter-spacing: 1.6px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   SKILLS
+========================= */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+    gap: 16px;
+}
+
+.skill-item {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #dcdcdc;
+    border: 1px solid var(--border-glass);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.skill-item img {
+    width: 28px;
+}
+
+.skill-item:hover {
+    box-shadow: 0 0 25px rgba(0,247,255,.25);
+}
+
+/* =========================
+   EXPERIENCE
+========================= */
+.experience p {
+    color: var(--text-soft);
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.experience strong {
+    color: #ffffff;
+}
+
+/* =========================
+   PROJECTS (NUEVO APARTADO)
+========================= */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-glass);
+    border-radius: 18px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    opacity: 0.3;
+    transition: opacity .35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0,247,255,.45);
+    box-shadow: 0 10px 40px rgba(0,247,255,.18);
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card h3 {
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.project-tech span {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    color: var(--accent);
+    border: 1px solid rgba(0,247,255,0.1);
+}
+
+.project-links a {
+    color: var(--accent-2);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color .3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.project-links a:hover {
+    color: var(--accent);
+}
+
+/* =========================
+   TECH STACK (MEJORADO)
+========================= */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+    gap: 20px;
+}
+
+.tech-item {
+    position: relative;
+    padding: 18px 16px;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.09),
+        rgba(255,255,255,.02)
+    );
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-glass);
+    text-align: center;
+    color: #dcdcdc;
+    font-weight: 500;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.tech-item img {
+    width: 24px;
+    height: 24px;
+}
+
+.tech-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at top left,
+        rgba(0,247,255,.35),
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity .35s ease;
+}
+
+.tech-item::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,.04);
+}
+
+.tech-item:hover {
+    transform: translateY(-6px) scale(1.03);
+    border-color: rgba(0,247,255,.45);
+    box-shadow:
+        0 10px 40px rgba(0,247,255,.18),
+        0 0 30px rgba(255,0,119,.18);
+}
+
+.tech-item:hover::before {
+    opacity: 1;
+}
+
+.tech-item a {
+    color: var(--accent-2);
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tech-item a:hover {
+    color: var(--accent);
+}
+
+/* =========================
+   HARD SKILLS (MEJORADO)
+========================= */
+.hard-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.hard-skills span {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 8px; /* Diseño ligeramente más cuadrado y tecnológico */
+    background: linear-gradient(135deg, rgba(0, 247, 255, 0.05), rgba(0, 0, 0, 0.2));
+    border: 1px solid rgba(0, 247, 255, 0.2);
+    color: #e6e6e6;
+    font-size: 0.9rem;
+    letter-spacing: 0.8px;
+    font-weight: 500;
+    overflow: hidden;
+    cursor: default;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto de barrido de luz interna */
+.hard-skills span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 247, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.hard-skills span:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-2);
+    color: #ffffff;
+    background: rgba(255, 0, 119, 0.1);
+    box-shadow: 0 5px 20px rgba(255, 0, 119, 0.2);
+}
+
+.hard-skills span:hover::before {
+    left: 100%;
+}
+
+/* =========================
+   CONTACT (MEJORADO)
+========================= */
+.contact {
+    margin: 80px auto 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 26px;
+    background: linear-gradient(145deg, var(--bg-glass), rgba(0,0,0,0.3));
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid var(--border-glass);
+    overflow: hidden;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Línea de acento inferior animada */
+.contact-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.contact-item img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.contact-text {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 247, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 247, 255, 0.15);
+}
+
+.contact-item:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.contact-item:hover img {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 0 5px var(--accent));
+}
+
+.contact-item:hover .contact-text {
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.4);
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<div class="container">
+    <div class="profile">
+        <img src="mr-robot.jpg" alt="Foto de perfil">
+        <div class="description">
+            <h1>Eduardo Martinez</h1>
+            <p>Soy un joven desarrollador graduado de diplomado en computación, con 4 años de experiencia en informática, enfocado principalmente en desarrollo de Backend usando Java y Python. Cuento con una sólida base en pentesting, Bug Bounty y desarrollo de software, complementada por conocimientos en JavaScript, SQL, NOSQL y en infraestructura de redes.</p>
+        </div>
+    </div>
+
+    <div class="sections">
+
+        <div class="section">
+            <h2>Skills & Languages</h2>
+            <div class="skill-grid">
+                <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">Python</div>
+                <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">JavaScript</div>
+                <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/61/Rust_Programming_Language_Logo_Gear_only.svg">Rust</div>
+                <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">Java</div>
+                <div class="skill-item"><img src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg">MySQL</div>
+                <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Icons8_flat_linux.svg">Linux</div>
+                <div class="skill-item"><img src="https://www.svgrepo.com/show/454430/burpsuite-security-software.svg">Burp Suite</div>
+                <div class="skill-item"><img src="icons8-router.gif">Redes</div>
+            </div>
+        </div>
+
+        <div class="section experience">
+            <h2><a href="https://github.com/Eduardx-2/" target="_blank" style="color:inherit;text-decoration:none;">Work Experience</a></h2>
+            <p><strong>Proyectos Abiertos</strong> - Desarrollo de herramientas personales y colaborativas en foros de hacking, enfocadas en mejorar y automatizar técnicas de pentesting.</p>
+            <p><strong>Desarrollo de software</strong> - Desarrollo de diferentes software en areas de: Big Data, IA y Ciberseguridad.</p>
+        </div>
+
+        <div class="section">
+            <h2>Proyectos</h2>
+            <div class="project-grid">
+                
+                <div class="project-card">
+                    <h3>Cifrarer</h3>
+                    <p>Cifrarer es una herramienta de automatización para crear contenedores (.img) cifrados.</p>
+                    <div class="project-tech">
+                        <span>Rust / Java / Python</span>
+                        <span>Fallocate & Linux</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Eduardx-2/Cifrarer" target="_blank">Ver Código ↗</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Lifeline Society</h3>
+                    <p>Lifeline Society es una herramienta de hacking modular, donde cada módulo contiene su propia funcionalidad específica para vulnerar sistemas, redes, etc.</p>
+                    <div class="project-tech">
+                        <span>Python / Java / JavaScript</span>
+                        <span>Hacking</span>
+                        <span>Pentesting</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Eduardx-2/LifelineSociety" target="_blank">Ver Proyecto ↗</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Acustic Grabber</h3>
+                    <p>Acustic Grabber es un Malware que se encarga de extraer Contraseñas, Gmails, Números, Cookies y Imagenes de la victima.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Hacking</span>
+                        <span>Powershell</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Eduardx-2/Acustic-Grabber" target="_blank">Ver Código ↗</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Annaba</h3>
+                    <p>Pretende ser una IA capaz de poder generar Identidades (DUI,NIT,RPM) falsas, usando plantillas de dichos documentos de identidad.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Opencv / OCR </span>
+                        <span>OSINT</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Ver Proyecto ↗</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section">
+            <h2>Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg">
+                    Spring Boot
+                </div>
+                <div class="tech-item">
+                    <a href="https://github.com/Eduardx-2/" target="_blank">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" style="filter: invert(1);">
+                        Github
+                    </a>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg">
+                    OpenCV
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg">
+                    Selenium
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
+                    Docker
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Hard Skills</h2>
+            <div class="hard-skills">
+                <span>Automatización</span>
+                <span>OSINT</span>
+                <span>Pentesting</span>
+                <span>POO</span>
+                <span>Desarrollo de Malware</span>
+                <span>Análisis de Datos</span>
+                <span>Backend</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="contact">
+    <div class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+        <a href="#" id="secure-email" class="contact-text">Cargando...</a>
+    </div>
+    <div class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Web" style="filter: invert(0.8);">
+        <a href="https://eduardx-2.github.io/Eduardx-2/" class="contact-text" target="_blank">Mi Web</a>
+    </div>
+    <div class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+        <a href="https://t.me/@Eduardx_montana" class="contact-text" target="_blank">Telegram</a>
+    </div>
+</div>
+
+<script>
+/* ===== OBFUSCACIÓN DE CORREO (ANTI-SCRAPING) ===== */
+// Evita que los bots recolectores lean tu correo en texto plano
+document.addEventListener("DOMContentLoaded", () => {
+    const user = "eduardoooxnix";
+    const domain = "proton.me";
+    const emailLink = document.getElementById("secure-email");
+    emailLink.href = "mailto:" + user + "@" + domain;
+    emailLink.textContent = user + "@" + domain;
+});
+
+/* ===== INTERSECTION ANIMATIONS ===== */
+const sections=document.querySelectorAll(".section");
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting)e.target.classList.add("visible");
+    });
+},{threshold:.15});
+sections.forEach(s=>observer.observe(s));
+
+/* ===== CARD TILT EFFECT ===== */
+// Añadida la clase .project-card para que los proyectos también tengan el efecto 3D
+document.querySelectorAll(".skill-item, .tech-item, .project-card").forEach(card=>{
+    card.addEventListener("mousemove",e=>{
+        const r=card.getBoundingClientRect();
+        const x=e.clientX-r.left;
+        const y=e.clientY-r.top;
+        card.style.transform=`translateY(-6px) rotateX(${-(y-r.height/2)/20}deg) rotateY(${(x-r.width/2)/20}deg)`;
+    });
+    card.addEventListener("mouseleave",()=>card.style.transform="");
+});
+
+/* ===== PARTICLES (HTB STYLE) ===== */
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+let w,h;
+
+function resize(){
+    w=canvas.width=window.innerWidth;
+    h=canvas.height=window.innerHeight;
+}
+window.addEventListener("resize",resize);
+resize();
+
+const particles=[];
+const COUNT=80;
+
+for(let i=0;i<COUNT;i++){
+    particles.push({
+        x:Math.random()*w,
+        y:Math.random()*h,
+        vx:(Math.random()-.5)*.3,
+        vy:(Math.random()-.5)*.3,
+        r:Math.random()*1.5+.5
+    });
+}
+
+function draw(){
+    ctx.clearRect(0,0,w,h);
+
+    for(let i=0;i<particles.length;i++){
+        const p=particles[i];
+        p.x+=p.vx;
+        p.y+=p.vy;
+
+        if(p.x<0||p.x>w)p.vx*=-1;
+        if(p.y<0||p.y>h)p.vy*=-1;
+
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle="rgba(255,255,255,.25)";
+        ctx.fill();
+
+        for(let j=i+1;j<particles.length;j++){
+            const q=particles[j];
+            const dx=p.x-q.x;
+            const dy=p.y-q.y;
+            const d=Math.sqrt(dx*dx+dy*dy);
+            if(d<120){
+                ctx.beginPath();
+                ctx.moveTo(p.x,p.y);
+                ctx.lineTo(q.x,q.y);
+                ctx.strokeStyle="rgba(255,0,119,.05)";
+                ctx.stroke();
+            }
+        }
+    }
+    requestAnimationFrame(draw);
+}
+draw();
+</script>
+
+</body>
+</html>
